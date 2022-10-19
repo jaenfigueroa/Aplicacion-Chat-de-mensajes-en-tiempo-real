@@ -1,0 +1,17 @@
+{
+  "name": "deploy-to-render",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "engines": {
+    "node": "12.x"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "build": "echo 'Bulding.... (not actually doing something, but usually I would)'"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}

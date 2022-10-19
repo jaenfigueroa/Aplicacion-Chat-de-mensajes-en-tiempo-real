@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 1.6rem;
+}
+html {
+  font-size: 62.5%; /* PARA USAR -> 1rem = 10px */
+}
+ul,
+ol {
+  list-style: none;
+}
+
+/*/////////////////////////*/
+header {
+  background-color: rgb(255, 148, 109);
+  font-size: 3rem;
+  padding: 20px;
+}
+
+/*/ ////////////////////////*/
+main {
+  background-color: rgb(168, 255, 183);
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.main__contenedor-total {
+  background-color: rgb(226, 177, 255);
+  max-width: 800px;
+}
+/* ///////////////////////////////// */
+.main__seccion-mensajes {
+  background-color: darkmagenta;
+  height: 600px;
+  width: 100%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+.main__contenedor-mensajes {
+  background-color: blue;
+  /* width: 100%; */
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  display: flex;
+  justify-content: end;
+}
+
+.main__mensaje {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.121);
+
+  display: flex;
+  /* width: 90%; */
+}
+.mensaje__nombre {
+  /* background-color: rgb(192, 196, 255); */
+  width: max-content;
+  font-weight: bold;
+  font-size: 2rem;
+  color: blue;
+}
+
+.mensaje__fecha {
+  /* background-color: rgb(255, 174, 174); */
+  font-size: 1.5rem;
+  color: rgb(131, 131, 131);
+  align-self: flex-end;
+  margin-top: 5px;
+}
+
+.mensaje__texto {
+  font-size: 1.8rem;
+}
+
+/* ///////////////////////////////// */
+
+.main__editor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgb(255, 192, 192);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.main__editor input,
+.main__editor button {
+  font-size: 2rem;
+}
+
+.editor__nombre {
+  font-size: 2.5rem;
+}
+.editor__input-mensaje {
+  /* height: 80px; */
+  word-wrap: break-word;
+  height: max-content;
+  min-width: 100%;
+  max-width: 100%;
+  height: 80px;
+  min-height: 80px;
+  font-size: 2.2rem;
+}
+.editor__boton-enviar {
+  margin-top: 10px;
+}
+/*/////////////////////////*/
+
+footer {
+  background-color: rgb(164, 255, 177);
+  font-size: 3rem;
+  padding: 20px;
+}

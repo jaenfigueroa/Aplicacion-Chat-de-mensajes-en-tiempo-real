@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="pruebas" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pruebas</title>
+    <!-- mobile css -->
+    <link rel="stylesheet" href="./css/mobile.css" />
+    <!-- js -->
+    <script src="main.js" defer></script>
+  </head>
+
+  <body>
+    <header>Header</header>
+    <main>
+      <section class="main__contenedor-total">
+        <!-- ///////////////////////////////////////////////////// -->
+        <section class="main__seccion-mensajes">
+          <div class="main__contenedor-mensajes" id="contenedorMensajes"></div>
+        </section>
+
+        <section class="main__seccion-editor">
+          <form class="main__editor" id="formulario">
+            <!-- ---------- -->
+            <span class="editor__nombre" id="nombreUsuario">Anonimo</span>
+            <textarea
+              class="editor__input-mensaje"
+              id="inputMensaje"></textarea>
+            <!-- ---------- -->
+            <button
+              id="formularioBoton"
+              class="editor__boton-enviar"
+              type="submit">
+              Enviar
+            </button>
+          </form>
+        </section>
+        <!--  -->
+        <!-- ///////////////////////////////////////////////////// -->
+      </section>
+    </main>
+    <!-- <footer>Footer</footer> -->
+  </body>
+</html>
