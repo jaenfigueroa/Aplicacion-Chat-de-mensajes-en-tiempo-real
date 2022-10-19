@@ -1,6 +1,6 @@
 let baseDatosIndividual = []
-// const DOMINIO = 'https://primera-version.herokuapp.com'
-const DOMINIO = 'http://localhost:3000'
+const DOMINIO = 'https://primera-version.herokuapp.com'
+// const DOMINIO = 'http://localhost:3000'
 ///////////////////////////////////////////////////////////////
 const contenedorMensajes = document.querySelector('#contenedorMensajes')
 
