@@ -13,7 +13,7 @@ function ObtenerArrayBD() {
       if (res.ok) {
         res.json().then((array) => {
           baseDatosIndividual = array
-          console.log(baseDatosIndividual);
+          // console.log(baseDatosIndividual);
           mostrarMensajes(baseDatosIndividual)
         })
       }
