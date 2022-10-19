@@ -3,7 +3,6 @@ const DOMINIO = 'https://primera-version.herokuapp.com'
 // const DOMINIO = 'http://localhost:3000'
 ///////////////////////////////////////////////////////////////
 const contenedorMensajes = document.querySelector('#contenedorMensajes')
-
 ///OBTENER EL ARRAY DE LA BASE DE DATOS////////////////////////
 
 function ObtenerArrayBD() {
@@ -23,8 +22,6 @@ function ObtenerArrayBD() {
 
 //MOSTRAR MENSAJES//////////////////////////////////////////////
 
-let xxx = document.querySelector('#xxx')
-
 function mostrarMensajes() {
   let contenido = ''
 
@@ -39,9 +36,6 @@ function mostrarMensajes() {
   });
 
   contenedorMensajes.innerHTML = contenido
-
-  xxx.scrollTop = xxx.scrollHeight;
-
 }
 //CREAR UN ELEMENTO INDIVIDUAL/////////////////////////////////////
 function crearElemento(id, nombre, mensaje, fecha, color) {
