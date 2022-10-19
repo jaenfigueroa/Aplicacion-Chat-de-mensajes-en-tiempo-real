@@ -1,14 +1,13 @@
 let baseDatos = [
-  {
-    "id": 8787483748,
-    "nombre": "Jaen",
-    "mensaje": "Hola 😀",
-    "fecha": "19:05 -- 2 de enero 2022"
-  },
+  // {
+  //   "id": 8787483748,
+  //   "nombre": "Jaen",
+  //   "mensaje": "Hola 😀",
+  //   "fecha": "2 de febrero"
+  // }
 ]
 
-////////////////////////////////////////////////////
-
+////////////////////////////////////////////////////////////////////
 const express = require('express')
 const server = express()
 
@@ -18,13 +17,14 @@ const cors = require('cors')
 server.use(cors())
 
 const fs = require('fs')
-////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////
 var meses = [
   'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
   'julio', 'agosto', 'setiembre', 'octubre', 'nombiembre', 'diciembre'
 ]
-////////////////////////////////////////////////
 
+//GUARDAR MENSAJES NUEVOS///////////////////////////////////////////
 server.post('/enviarMensaje', (req, res) => {
 
   const id = Math.floor(Math.random() * 1000)
@@ -32,9 +32,13 @@ server.post('/enviarMensaje', (req, res) => {
   const mensaje = req.body.mensaje
   //-----------------------
   let x = new Date()
-  console.log(x);
   //------------------------
-  const fechaActual = `${x.getHours()}:${x.getMinutes()} - ${x.getDay()} de ${meses[x.getMonth()]}`
+  let hora = `${x.getHours()}`.padStart(2, 0)
+  let minutos = `${x.getMinutes()}`.padStart(2, 0)
+  let dia = `${x.getDate()}`.padStart(2, 0)
+  let mes = meses[x.getMonth()]
+
+  const fechaActual = `${hora}:${minutos} - ${dia} de ${mes}`
 
   let datos = {
     id: id,
@@ -45,16 +49,15 @@ server.post('/enviarMensaje', (req, res) => {
 
   baseDatos.push(datos)
 
-  console.log('se guardo un mensaje nuevo');
   res.json('Se envio correctamente el mensaje')
 })
 
-///ENVIAR ARRAY CON LOS MENSAJES/////////////////////////////
+///ENVIAR ARRAY CON LOS MENSAJES AL CLIENTE//////////////////////////
 server.get('/obtenerArray', (req, res) => {
   res.json(baseDatos)
 })
 
-////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
 server.use(express.static('public'))
 
 const PORT = process.env.PORT || 3000
