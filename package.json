@@ -7,7 +7,7 @@
     "node": "12.x"
   },
   "scripts": {
-    "start": "nodemon src/index.js",
+    "start": "node src/index.js",
     "build": "echo 'Bulding.... (not actually doing something, but usually I would)'"
   },
   "dependencies": {
