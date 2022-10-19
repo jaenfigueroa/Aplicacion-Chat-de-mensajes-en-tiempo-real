@@ -4,6 +4,7 @@
   padding: 0;
   font-family: sans-serif;
   font-size: 1.6rem;
+  scroll-behavior: smooth;
 }
 html {
   font-size: 62.5%; /* PARA USAR -> 1rem = 10px */
@@ -14,6 +15,7 @@ ol {
 }
 
 /*/////////////////////////*/
+
 header {
   background-color: rgb(255, 148, 109);
   font-size: 3rem;
@@ -26,15 +28,18 @@ main {
   font-size: 3rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
 }
 .main__contenedor-total {
-  background-color: rgb(226, 177, 255);
+  /* background-color: rgb(226, 177, 255); */
+  min-width: 320px;
   max-width: 800px;
+  width: 90%;
 }
 /* ///////////////////////////////// */
 .main__seccion-mensajes {
-  background-color: darkmagenta;
+  /* background-color: darkmagenta; */
   height: 600px;
   width: 100%;
   overflow-y: scroll;
@@ -42,7 +47,7 @@ main {
   flex-direction: column;
 }
 .main__contenedor-mensajes {
-  background-color: blue;
+  /* background-color: blue; */
   /* width: 100%; */
   padding: 15px;
   display: flex;
@@ -50,12 +55,15 @@ main {
   gap: 10px;
   display: flex;
   justify-content: end;
+  /* scroll-behavior: smooth; */
+
+  scroll-behavior: smooth;
 }
 
 .main__mensaje {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 2px;
   padding: 15px;
   border-radius: 10px;
   background-color: white;
@@ -89,19 +97,20 @@ main {
 .main__editor {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   background-color: rgb(255, 192, 192);
-  border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
 }
 
-.main__editor input,
+.main__editor input {
+  font-size: 1rem;
+}
 .main__editor button {
   font-size: 2rem;
 }
 
 .editor__nombre {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 .editor__input-mensaje {
   /* height: 80px; */
@@ -111,7 +120,8 @@ main {
   max-width: 100%;
   height: 80px;
   min-height: 80px;
-  font-size: 2.2rem;
+  font-size: 2rem;
+  padding: 5px;
 }
 .editor__boton-enviar {
   margin-top: 10px;
