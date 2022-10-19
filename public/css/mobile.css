@@ -95,6 +95,9 @@ main {
   background-color: rgb(171, 160, 255);
   padding: 10px;
 }
+.main__seccion-editor div:nth-child(1) {
+  display: flex;
+}
 .main__editor {
   display: flex;
   flex-direction: column;
@@ -102,7 +105,9 @@ main {
 .editor__nombre {
   padding-bottom: 5px;
   font-weight: bold;
+  width: 150px;
 }
+
 .main__editor button {
   font-size: 2rem;
 }
