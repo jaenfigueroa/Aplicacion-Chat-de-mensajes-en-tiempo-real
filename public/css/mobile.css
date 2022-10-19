@@ -23,6 +23,9 @@ header {
 }
 
 /*/ ////////////////////////*/
+body {
+  max-height: 100vh;
+}
 main {
   background-color: aquamarine;
   font-size: 3rem;
@@ -30,7 +33,6 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  height: 100vh;
 }
 .main__contenedor-total {
   /* background-color: rgb(226, 177, 255); */
