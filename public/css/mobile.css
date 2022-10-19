@@ -24,10 +24,11 @@ header {
 
 /*/ ////////////////////////*/
 body {
-  background-color: aquamarine;
+  height: 100vh;
 }
 main {
   background-color: aquamarine;
+  background-color: rgb(255, 255, 189);
   font-size: 3rem;
   display: flex;
   flex-direction: column;
@@ -36,12 +37,10 @@ main {
 }
 .main__contenedor-total {
   background-color: aquamarine;
-  min-width: 320px;
+  /* min-width: 320px; */
   max-width: 800px;
   width: 100%;
-  height: 82vh;
   min-height: 100%;
-  position: relative;
 }
 /* ///////////////////////////////// */
 .main__seccion-mensajes {
@@ -82,7 +81,9 @@ main {
   font-weight: bold;
   color: blue;
 }
-
+.mensaje__nombre::first-letter {
+  text-transform: uppercase;
+}
 .mensaje__fecha {
   /* background-color: rgb(255, 174, 174); */
   color: rgb(131, 131, 131);
@@ -94,18 +95,21 @@ main {
 .main__seccion-editor {
   background-color: rgb(171, 160, 255);
   padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 160px;
+  max-width: 800px;
 }
 .main__seccion-editor div:nth-child(1) {
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
 }
 .main__editor {
   display: flex;
   flex-direction: column;
-}
-.editor__nombre {
-  padding-bottom: 5px;
-  font-weight: bold;
-  width: 150px;
 }
 
 .main__editor button {
@@ -126,3 +130,7 @@ main {
   margin-top: 5px;
 }
 /*/////////////////////////*/
+footer {
+  height: 160px;
+  background-color: rgb(255, 255, 189);
+}

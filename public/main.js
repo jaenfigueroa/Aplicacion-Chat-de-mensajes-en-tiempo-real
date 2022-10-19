@@ -77,6 +77,7 @@ formulario.addEventListener('submit', (evento) => {
   let colorUsuario = inputColor.value
 
   //////////////////
+  inputMensaje.value = ''
   enviarMensajeNuevo(nombreUsuario, mensajeUsuario, colorUsuario)
 })
 

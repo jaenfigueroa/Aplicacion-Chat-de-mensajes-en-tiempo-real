@@ -23,16 +23,21 @@
 
         <section class="main__seccion-editor">
           <!-- <div class="editor__nombre" id="nombreUsuario">Anonimo</div> -->
-          <div>
-            <span>Nombre</span>
-            <input type="text" class="editor__nombre" id="inputNombre" />
-            <input type="color" id="inputColor" class="editor__color" />
-          </div>
           <form class="main__editor" id="formulario">
+            <div>
+              <span>Nombre</span>
+              <input
+                type="text"
+                class="editor__nombre"
+                id="inputNombre"
+                required />
+              <input type="color" class="editor__color" id="inputColor" />
+            </div>
             <!-- ---------- -->
             <textarea
               class="editor__input-mensaje"
-              id="inputMensaje"></textarea>
+              id="inputMensaje"
+              required></textarea>
             <!-- ---------- -->
             <button
               id="formularioBoton"
@@ -46,6 +51,6 @@
         <!-- ///////////////////////////////////////////////////// -->
       </section>
     </main>
-    <!-- <footer>Footer</footer> -->
+    <footer></footer>
   </body>
 </html>
