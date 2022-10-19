@@ -3,8 +3,9 @@ let baseDatosIndividual = []
 const contenedorMensajes = document.querySelector('#contenedorMensajes')
 
 ///OBTENER EL ARRAY DE LA BASE DE DATOS////////////////////////
+
 function ObtenerArrayBD() {
-  var url = 'http://localhost:3000/obtenerArray';
+  var url = 'https://primera-version.herokuapp.com/obtenerArray';
   //////////////////
   fetch(url)
     .then((res) => {
@@ -70,7 +71,7 @@ formulario.addEventListener('submit', (evento) => {
 ///////////////////////////////////////////////////////////////
 //ENVIAR MENSAJE NUEVO/////////////////////////////////////////
 function enviarMensajeNuevo(nombreUser, mensajeUser) {
-  var url = 'http://localhost:3000/enviarMensaje';
+  var url = 'https://primera-version.herokuapp.com/enviarMensaje';
 
   var datos = {
     nombre: nombreUser,
