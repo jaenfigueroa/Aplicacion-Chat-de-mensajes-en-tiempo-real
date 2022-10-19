@@ -20,8 +20,12 @@ const fs = require('fs')
 
 ////////////////////////////////////////////////////////////////////
 var meses = [
-  'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
-  'julio', 'agosto', 'setiembre', 'octubre', 'nombiembre', 'diciembre'
+  'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+  'Julio', 'Agosto', 'Setiembre', 'Octubre', 'Nombiembre', 'Diciembre'
+]
+
+var dias = [
+  'lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'
 ]
 
 //GUARDAR MENSAJES NUEVOS///////////////////////////////////////////
@@ -36,10 +40,12 @@ server.post('/enviarMensaje', (req, res) => {
   //------------------------
   let hora = `${x.getHours()}`.padStart(2, 0)
   let minutos = `${x.getMinutes()}`.padStart(2, 0)
-  let dia = `${x.getDate()}`.padStart(2, 0)
+  let fecha = `${x.getDate()}`.padStart(2, 0)
   let mes = meses[x.getMonth()]
+  let dia = dias[x.getDay()]
+  let year = `${x.getFullYear()}`.padStart(4, 0)
 
-  const fechaActual = `${hora}:${minutos} - ${dia} de ${mes}`
+  const fechaActual = `${hora}:${minutos} - ${dia}, ${fecha} de ${mes} del ${year}`
 
   let datos = {
     id: id,
@@ -68,7 +74,4 @@ const PORT = process.env.PORT || 3000
 server.listen(PORT, () => {
   console.log('Servidor escuchando en http://localhost:' + PORT)
 })
-
-
-
 
