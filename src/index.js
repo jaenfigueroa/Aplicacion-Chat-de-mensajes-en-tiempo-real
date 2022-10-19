@@ -30,6 +30,7 @@ server.post('/enviarMensaje', (req, res) => {
   const id = Math.floor(Math.random() * 1000)
   const nombre = req.body.nombre
   const mensaje = req.body.mensaje
+  const color = req.body.color
   //-----------------------
   let x = new Date()
   //------------------------
@@ -44,11 +45,13 @@ server.post('/enviarMensaje', (req, res) => {
     id: id,
     nombre: nombre,
     mensaje: mensaje,
-    fecha: fechaActual
+    fecha: fechaActual,
+    color: color
   }
 
   baseDatos.push(datos)
 
+  console.log(baseDatos);
   res.json('Se envio correctamente el mensaje')
 })
 

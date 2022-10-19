@@ -1,6 +1,6 @@
 let baseDatosIndividual = []
-const DOMINIO = 'https://primera-version.herokuapp.com'
-// const DOMINIO = 'http://localhost:3000'
+// const DOMINIO = 'https://primera-version.herokuapp.com'
+const DOMINIO = 'http://localhost:3000'
 ///////////////////////////////////////////////////////////////
 const contenedorMensajes = document.querySelector('#contenedorMensajes')
 
@@ -34,7 +34,8 @@ function mostrarMensajes() {
       elemento.id,
       elemento.nombre,
       elemento.mensaje,
-      elemento.fecha)
+      elemento.fecha,
+      elemento.color)
   });
 
   contenedorMensajes.innerHTML = contenido
@@ -43,10 +44,10 @@ function mostrarMensajes() {
 
 }
 //CREAR UN ELEMENTO INDIVIDUAL/////////////////////////////////////
-function crearElemento(id, nombre, mensaje, fecha) {
+function crearElemento(id, nombre, mensaje, fecha, color) {
 
   return `<div class="main__mensaje" id='mensaje${id}'>
-  <p class="mensaje__nombre">${nombre}</p>
+  <p class="mensaje__nombre" style="color:${color}">${nombre}</p>
   <p class="mensaje__texto" id="respuesta">${mensaje}</p>
   <p class="mensaje__fecha" id="fecha">${fecha}</p>
   </div>`
@@ -63,28 +64,31 @@ window.addEventListener('load', () => {
 //////////////////////////////////////////////////////////
 ///CREAR NUEVOS MENSAJES /////////////////////////////////
 const formulario = document.querySelector('#formulario')
-const nombre = document.querySelector('#nombreUsuario')
+const nombre = document.querySelector('#inputNombre')
 const inputMensaje = document.querySelector('#inputMensaje')
+const inputColor = document.querySelector('#inputColor')
 
 
 formulario.addEventListener('submit', (evento) => {
   evento.preventDefault()
 
-  let nombreUsuario = nombre.textContent
+  let nombreUsuario = nombre.value
   let mensajeUsuario = inputMensaje.value
+  let colorUsuario = inputColor.value
 
   //////////////////
-  enviarMensajeNuevo(nombreUsuario, mensajeUsuario)
+  enviarMensajeNuevo(nombreUsuario, mensajeUsuario, colorUsuario)
 })
 
 ///////////////////////////////////////////////////////////////
 //ENVIAR MENSAJE NUEVO/////////////////////////////////////////
-function enviarMensajeNuevo(nombreUser, mensajeUser) {
+function enviarMensajeNuevo(nombreUser, mensajeUser, colorUsuario) {
   var url = `${DOMINIO}/enviarMensaje`;
 
   var datos = {
     nombre: nombreUser,
-    mensaje: mensajeUser
+    mensaje: mensajeUser,
+    color: colorUsuario
   };
 
   /////////////////////////////
