@@ -23,12 +23,14 @@ header {
 }
 
 /*/ ////////////////////////*/
+html {
+  background-color: aquamarine;
+}
 body {
   height: 100vh;
 }
 main {
-  background-color: aquamarine;
-  background-color: rgb(255, 255, 189);
+  /* background-color: rgb(255, 255, 189); */
   font-size: 3rem;
   display: flex;
   flex-direction: column;
@@ -36,7 +38,7 @@ main {
   gap: 20px;
 }
 .main__contenedor-total {
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
   /* min-width: 320px; */
   max-width: 800px;
   width: 100%;
@@ -70,7 +72,7 @@ main {
   padding: 8px;
   border-radius: 10px;
   background-color: white;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.121);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.056);
 
   display: flex;
   /* width: 90%; */
@@ -132,5 +134,5 @@ main {
 /*/////////////////////////*/
 footer {
   height: 160px;
-  background-color: rgb(255, 255, 189);
+  /* background-color: rgb(255, 255, 189); */
 }
