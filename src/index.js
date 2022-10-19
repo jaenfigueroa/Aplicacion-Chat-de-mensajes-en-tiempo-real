@@ -32,6 +32,7 @@ server.post('/enviarMensaje', (req, res) => {
   const mensaje = req.body.mensaje
   //-----------------------
   let x = new Date()
+  console.log(x);
   //------------------------
   const fechaActual = `${x.getHours()}:${x.getMinutes()} - ${x.getDay()} de ${meses[x.getMonth()]}`
 
@@ -61,3 +62,7 @@ const PORT = process.env.PORT || 3000
 server.listen(PORT, () => {
   console.log('Servidor escuchando en http://localhost:' + PORT)
 })
+
+
+
+

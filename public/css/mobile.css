@@ -24,7 +24,6 @@ header {
 
 /*/ ////////////////////////*/
 body {
-  max-height: 100%;
   background-color: aquamarine;
 }
 main {
@@ -40,7 +39,7 @@ main {
   min-width: 320px;
   max-width: 800px;
   width: 100%;
-  height: 100vh;
+  height: 82vh;
   min-height: 100%;
   position: relative;
 }
