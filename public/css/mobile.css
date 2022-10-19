@@ -24,7 +24,7 @@ header {
 
 /*/ ////////////////////////*/
 body {
-  max-height: 100vh;
+  max-height: 100%;
   background-color: aquamarine;
 }
 main {
@@ -41,37 +41,28 @@ main {
   max-width: 800px;
   width: 100%;
   height: 100vh;
-  min-height: 100vh;
+  min-height: 100%;
   position: relative;
 }
 /* ///////////////////////////////// */
 .main__seccion-mensajes {
   /* background-color: darkmagenta; */
-  height: 600px;
   height: 100%;
   width: 100%;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
-
   overflow: hidden;
   bottom: 50px;
-  /* position: sticky; */
 }
 .main__contenedor-mensajes {
   /* background-color: rgb(214, 221, 255); */
-  /* width: 100%; */
   padding: 15px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   display: flex;
   justify-content: end;
-  /* scroll-behavior: smooth; */
-
-  scroll-behavior: smooth;
-  overflow: visible;
-  bottom: 0;
 }
 
 .main__mensaje {
