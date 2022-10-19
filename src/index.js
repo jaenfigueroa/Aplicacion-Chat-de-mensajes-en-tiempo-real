@@ -38,14 +38,13 @@ server.post('/enviarMensaje', (req, res) => {
   //-----------------------
   let x = new Date()
   //------------------------
-  let hora = `${x.getHours()}`.padStart(2, 0)
-  let minutos = `${x.getMinutes()}`.padStart(2, 0)
-  let fecha = `${x.getDate()}`.padStart(2, 0)
-  let mes = meses[x.getMonth()]
-  let dia = dias[x.getDay()]
-  let year = `${x.getFullYear()}`.padStart(4, 0)
+  let hora = `${x.getUTCHours()}`.padStart(2, 0)
+  let minutos = `${x.getUTCMinutes()}`.padStart(2, 0)
+  let fecha = `${x.getUTCDate()}`.padStart(2, 0)
+  let mes = meses[x.getUTCMonth()]
+  let dia = dias[x.getUTCDay()]
 
-  const fechaActual = `${hora}:${minutos} - ${dia}, ${fecha} de ${mes} del ${year}`
+  const fechaActual = `${hora}:${minutos} - ${dia}, ${fecha} de ${mes}`
 
   let datos = {
     id: id,
