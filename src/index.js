@@ -2,39 +2,9 @@ let baseDatos = [
   {
     "id": 8787483748,
     "nombre": "Jaen",
-    "mensaje": "hola amigos como estan",
+    "mensaje": "Hola 😀",
     "fecha": "19:05 -- 2 de enero 2022"
   },
-  {
-    "id": 8787483748,
-    "nombre": "Maria",
-    "mensaje": "Yo estoy ene le centro de lima",
-    "fecha": "19:07 -- 2 de enero 2022"
-  },
-  {
-    "id": 8787483748,
-    "nombre": "Pablo",
-    "mensaje": "amigos me voy a cenar",
-    "fecha": "20: 05 -- 2 de enero 2022"
-  },
-  // {
-  //   "id": 8787483748,
-  //   "nombre": "Martin",
-  //   "mensaje": "Yo estoy ene le centro de lima",
-  //   "fecha": "19:07 -- 2 de enero 2022"
-  // },
-  // {
-  //   "id": 8787483748,
-  //   "nombre": "Sofia",
-  //   "mensaje": "Yo estoy ene le centro de lima",
-  //   "fecha": "19:07 -- 2 de enero 2022"
-  // },
-  // {
-  //   "id": 8787483748,
-  //   "nombre": "Fernanda",
-  //   "mensaje": "Yo estoy ene le centro de lima",
-  //   "fecha": "19:07 -- 2 de enero 2022"
-  // },
 ]
 
 ////////////////////////////////////////////////////
