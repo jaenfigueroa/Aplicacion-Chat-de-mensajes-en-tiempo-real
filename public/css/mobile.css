@@ -15,11 +15,12 @@ ol {
 }
 
 /*/////////////////////////*/
-
 header {
   background-color: rgb(255, 148, 109);
   font-size: 2rem;
   padding: 10px;
+  position: sticky;
+  top: 0;
 }
 
 /*/ ////////////////////////*/
@@ -38,22 +39,25 @@ main {
   gap: 20px;
 }
 .main__contenedor-total {
-  /* background-color: aquamarine; */
+  background-color: aquamarine;
   /* min-width: 320px; */
   max-width: 800px;
   width: 100%;
-  min-height: 100%;
+  /* min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 /* ///////////////////////////////// */
 .main__seccion-mensajes {
-  /* background-color: darkmagenta; */
-  height: 100%;
+  background-color: darkmagenta;
   width: 100%;
-  overflow-y: scroll;
+  height: max-content;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  bottom: 50px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 .main__contenedor-mensajes {
   /* background-color: rgb(214, 221, 255); */
@@ -62,7 +66,6 @@ main {
   flex-direction: column;
   gap: 10px;
   display: flex;
-  justify-content: end;
 }
 
 .main__mensaje {
@@ -73,9 +76,7 @@ main {
   border-radius: 10px;
   background-color: white;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.056);
-
   display: flex;
-  /* width: 90%; */
 }
 .mensaje__nombre {
   /* background-color: rgb(192, 196, 255); */
@@ -132,8 +133,14 @@ main {
 .editor__boton-enviar {
   margin-top: 5px;
 }
+.editor__color {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
 /*/////////////////////////*/
 footer {
   height: 160px;
-  /* background-color: rgb(255, 255, 189); */
+  background-color: rgb(255, 255, 189);
 }

@@ -1,10 +1,10 @@
 let baseDatosIndividual = []
-const DOMINIO = 'https://primera-version.herokuapp.com'
-// const DOMINIO = 'http://localhost:3000'
+// const DOMINIO = 'https://primera-version.herokuapp.com'
+const DOMINIO = 'http://localhost:3000'
 ///////////////////////////////////////////////////////////////
 const contenedorMensajes = document.querySelector('#contenedorMensajes')
-///OBTENER EL ARRAY DE LA BASE DE DATOS////////////////////////
 
+///OBTENER EL ARRAY DE LA BASE DE DATOS////////////////////////
 function ObtenerArrayBD() {
   var url = `${DOMINIO}/obtenerArray`;
   //////////////////
@@ -21,7 +21,6 @@ function ObtenerArrayBD() {
 }
 
 //MOSTRAR MENSAJES//////////////////////////////////////////////
-
 function mostrarMensajes() {
   let contenido = ''
 
@@ -36,6 +35,8 @@ function mostrarMensajes() {
   });
 
   contenedorMensajes.innerHTML = contenido
+
+  // document.scrollTop = document.scrollHeight;
 }
 //CREAR UN ELEMENTO INDIVIDUAL/////////////////////////////////////
 function crearElemento(id, nombre, mensaje, fecha, color) {
@@ -49,7 +50,6 @@ function crearElemento(id, nombre, mensaje, fecha, color) {
 
 //////////////////////////////////////////////////////////////////
 window.addEventListener('load', () => {
-
   setInterval(() => {
     ObtenerArrayBD()
   }, 1000);
