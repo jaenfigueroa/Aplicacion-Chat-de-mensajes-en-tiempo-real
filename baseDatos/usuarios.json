@@ -3,20 +3,17 @@
     {
       "id": 8784885748,
       "nombre": "Ahini",
-      "password": "ahinixx",
-      "color": "#00ff00"
+      "password": "ahinixx"
     },
     {
       "id": 8784848445,
       "nombre": "Sofia",
-      "password": "sofiaxx",
-      "color": "#ff0000"
+      "password": "sofiaxx"
     },
     {
       "id": 5087306945,
       "nombre": "Jaen",
-      "password": "noname",
-      "color": "#0000ff"
+      "password": "noname"
     }
   ]
 }
