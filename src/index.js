@@ -67,14 +67,12 @@ function fechaActual() {
 server.post('/registrate', (req, res) => {
   let nombreUsuario = req.body.nombre
   let passwordUsuario = req.body.password
-  let colorUsuario = req.body.color
   let idUsuario = Math.floor(Math.random() * 10000000000)
 
   let nuevoUsuario = {
     id: idUsuario,
     nombre: nombreUsuario,
     password: passwordUsuario,
-    color: colorUsuario
   }
 
   let resultado = usuarios.lista.some(x => x.nombre == nombreUsuario)
@@ -123,7 +121,7 @@ server.post('/iniciarSesion', (req, res) => {
         resultado: 'contraseña correcta',
         candado1: true,
         candado2: true,
-        id, nombre, color, password
+        id, nombre, password
       })
 
     } else {
@@ -145,35 +143,32 @@ server.post('/iniciarSesion', (req, res) => {
 })
 
 //CAMBIAR COLOR DE USUARIO//////////////////////////////////////////////////
-server.post('/guardarColor', (req, res) => {
-  let idUser = req.body.id
-  let colorUser = req.body.color
+// server.post('/guardarColor', (req, res) => {
+//   let idUser = req.body.id
+//   let colorUser = req.body.color
 
-  existencia = usuarios.lista.some(x => x.id === idUser)
+//   existencia = usuarios.lista.some(x => x.id === idUser)
 
-  if (existencia) {
-    let indice = usuarios.lista.findIndex(x => x.id === idUser)
-    usuarios.lista[indice].color = colorUser
+//   if (existencia) {
+//     let indice = usuarios.lista.findIndex(x => x.id === idUser)
+//     usuarios.lista[indice].color = colorUser
 
-    fs.writeFileSync('./baseDatos/usuarios.json', JSON.stringify(usuarios))
+//     fs.writeFileSync('./baseDatos/usuarios.json', JSON.stringify(usuarios))
 
-    res.send('Color del usuario cambiado')
-  } else {
-    res.send('No existe el usuario')
-  }
-})
+//     res.send('Color del usuario cambiado')
+//   } else {
+//     res.send('No existe el usuario')
+//   }
+// })
 
 ///COMPROBAR CREDENCIALES//////////////////////////////////////////////////
 server.post('/comprobarCredenciales', (req, res) => {
-
-  // console.log(req.body);
 
   let userId = req.body.id || 'nohay'
   let userPassword = req.body.password || 'nohay'
 
   // console.log(userId);
   // console.log(userPassword);
-
 
   if (userId && userPassword === 'nohay') {
     res.json({
@@ -189,13 +184,11 @@ server.post('/comprobarCredenciales', (req, res) => {
     let idBD = usuarioFiltrado[0].id
     let passwordBD = usuarioFiltrado[0].password
     let nameBD = usuarioFiltrado[0].nombre
-    let colorBD = usuarioFiltrado[0].color
 
     if (userId == idBD && userPassword === passwordBD) {
       res.json({
         candado: true,
         nombre: nameBD,
-        color: colorBD
       })
     } else {
       res.json({
