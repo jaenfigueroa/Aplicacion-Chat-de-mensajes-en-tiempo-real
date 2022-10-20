@@ -68,8 +68,8 @@ window.addEventListener('load', () => {
   let userName = localStorage.getItem('userName')
   nombre.textContent = userName
 
-  let userColor = localStorage.getItem('userColor') || '#ff0000'
-  inputColor.value = userColor
+  let userColor = localStorage.getItem('userColor')
+  inputColor.value = userColor || '#ff0000'
 
   setInterval(() => {
 
