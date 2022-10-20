@@ -58,5 +58,5 @@ formulario.addEventListener('submit', (evento) => {
 
 ////////////////////////////
 function abrirChat() {
-  window.location.assign("/public/chat/chat.html")
+  window.location.assign("../chat/chat.html")
 }

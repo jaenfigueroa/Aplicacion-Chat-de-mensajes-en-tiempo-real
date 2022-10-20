@@ -67,7 +67,7 @@ function comprobarCredenciales(valor1, valor2, id, nombre, color) {
     botonComprobar.textContent = 'Continuar'
 
     botonComprobar.addEventListener('click', (evento) => {
-      window.location.assign("/public/chat/chat.html")
+      window.location.assign("../chat/chat.html")
     })
 
   } else if (valor1 === true && valor2 === false) {
