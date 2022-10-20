@@ -1,7 +1,8 @@
 let baseDatosIndividual = []
-// const DOMINIO = 'https://primera-version.herokuapp.com'
+
+const DOMINIO = 'https://primera-version.herokuapp.com'
 // const DOMINIO = 'https://aplicacion-de-mensajes-production.up.railway.app'
-const DOMINIO = 'http://localhost:3000'
+// const DOMINIO = 'http://localhost:3000'
 ///////////////////////////////////////////////////////////////
 const contenedorMensajes = document.querySelector('#contenedorMensajes')
 
@@ -16,6 +17,7 @@ function ObtenerArrayBD() {
         res.json().then((array) => {
           baseDatosIndividual = array
           // console.log(baseDatosIndividual);
+          // console.log(array);
           mostrarMensajes(baseDatosIndividual)
         })
       }
@@ -46,37 +48,49 @@ function mostrarMensajes() {
 //CREAR UN ELEMENTO HTML INDIVIDUAL DE UN MENSAJE//////////////////
 function crearElemento(id, nombre, mensaje, fecha, color) {
 
-  return `<div class="main__mensaje" id='mensaje${id}'>
-  <p class="mensaje__nombre" style="color:${color}">${nombre}</p>
-  <p class="mensaje__texto" id="respuesta">${mensaje}</p>
-  <p class="mensaje__fecha" id="fecha">${fecha}</p>
-  </div>`
+  return `
+  <div class="chat__mensaje" id='mensaje${id}'>
+  <div>
+    <h3 class="mensaje__nombre" style="color:${color}">${nombre}</h3>
+    <p class="mensaje__fecha">${fecha}</p>
+  </div>
+  <p class="mensaje__texto">${mensaje}</p>
+  </div>
+  `
 }
 
 //////////////////////////////////////////////////////////////////
 window.addEventListener('load', () => {
+  let colorNombre = localStorage.getItem('colorNombre') || '#ff0000'
+  inputColor.value = colorNombre
+
+
   setInterval(() => {
+    let nombreUsuario = localStorage.getItem('nombreUsuario')
+    nombre.textContent = nombreUsuario || 'Anonimo'
+
     ObtenerArrayBD()
   }, 1000);
 })
 
 //////////////////////////////////////////////////////////
 ///CREAR NUEVO MENSAJE ///////////////////////////////////
-const formulario = document.querySelector('#formulario')
+const botonEnviar = document.querySelector('#botonEnviar')
 const nombre = document.querySelector('#inputNombre')
 const inputMensaje = document.querySelector('#inputMensaje')
 const inputColor = document.querySelector('#inputColor')
 
 
-formulario.addEventListener('submit', (evento) => {
+botonEnviar.addEventListener('click', (evento) => {
   evento.preventDefault()
 
-  let nombreUsuario = nombre.value
+  let nombreUsuario = nombre.textContent
   let mensajeUsuario = inputMensaje.value
   let colorUsuario = inputColor.value
 
   //////////////////
   inputMensaje.value = ''
+
   enviarMensajeNuevo(nombreUsuario, mensajeUsuario, colorUsuario)
 })
 
@@ -101,12 +115,16 @@ function enviarMensajeNuevo(nombreUser, mensajeUser, colorUsuario) {
   })
     .then((res) => {
       if (res.ok) {
-        res.json().then((array) => {
+        res.json().then((Respuesta) => {
 
-          baseDatosIndividual = array
+          // console.log("Respuesta del servidor:", Respuesta);
         })
       }
     })
 }
 ///////////////////////////////////////////////////////////////
+inputColor.addEventListener('input', (evento) => {
+  const color = evento.target.value
 
+  localStorage.setItem('colorNombre', color)
+})

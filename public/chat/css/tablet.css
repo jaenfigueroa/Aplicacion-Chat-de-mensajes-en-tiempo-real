@@ -1,0 +1,9 @@
+.main__contenedor-chat {
+  width: 90%;
+  height: 90%;
+}
+
+.main__contenedor-chat {
+  border-radius: 5px;
+  overflow: hidden;
+}
