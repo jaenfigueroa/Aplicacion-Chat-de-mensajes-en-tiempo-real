@@ -43,8 +43,8 @@ formulario.addEventListener('submit', (evento) => {
             botonComprobar.textContent = 'Continuar'
             botonComprobar.addEventListener('click', abrirChat)
 
-            localStorage.setItem('userName', id)
-            localStorage.setItem('userId', nombre)
+            localStorage.setItem('userId', id)
+            localStorage.setItem('userName', nombre)
             localStorage.setItem('userPassword', password)
 
           } else {
