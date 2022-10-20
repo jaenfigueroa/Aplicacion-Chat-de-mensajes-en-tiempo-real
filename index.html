@@ -7,59 +7,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio de Sesion</title>
     <!-- mobile css -->
-    <link rel="stylesheet" href="./public/css-signup-login/mobile.css" />
+    <link rel="stylesheet" href="../css-signup-login/mobile.css" />
     <!-- tablet css -->
     <link
       rel="stylesheet"
-      href="./public/css-signup-login/tablet.css"
+      href="../css-signup-login/tablet.css"
       media="screen and (min-width: 768px)" />
     <!-- desktop css -->
     <link
       rel="stylesheet"
-      href="./public/css-signup-login/desktop.css"
+      href="../css-signup-login/desktop.css"
       media="screen and (min-width: 1024px)" />
     <!-- js -->
-    <script src="./Registrarse/Registrate.js" defer></script>
+    <script src="public/IniciarSesion/iniciarSesion.js" defer></script>
   </head>
 
   <body>
     <header>Chat</header>
     <main>
       <article class="main__contenedor-formulario">
-        <h2 class="formulario__titulo">Registrate</h2>
-        <form class="formulario">
+        <h2 class="formulario__titulo">Iniciar Sesion</h2>
+        <form class="formulario" id="formulario">
           <section>
             <div class="formulario__bloque">
               <label for="userName">
-                <span class="bloque__titulo">Nombre</span>
+                <div class="bloque__contenedor-titulo">
+                  <span class="bloque__titulo">Nombre</span>
+                  <span class="bloque__aviso" id="aviso1"></span>
+                </div>
                 <input
                   class="bloque__input"
                   type="text"
-                  id="userName"
+                  id="inputNombre"
                   autocomplete="name"
                   required />
               </label>
             </div>
             <div class="formulario__bloque">
               <label for="password">
-                <span class="bloque__titulo">Contraseña</span>
+                <div class="bloque__contenedor-titulo">
+                  <span class="bloque__titulo">Contraseña</span>
+                  <span class="bloque__aviso" id="aviso2"></span>
+                </div>
                 <input
                   class="bloque__input"
                   type="password"
-                  id="password"
+                  id="inputPassword"
                   autocomplete="new-password"
                   required />
                 <p class="bloque__ayuda">
-                  ¿Ya tienes una cuenta?
-                  <a href="./IniciarSesion/IniciarSesion.html">Inicia Sesion</a>
+                  ¿Aun no tienes una cuenta?
+                  <a href="../index.html">Registrate</a>
                 </p>
               </label>
             </div>
           </section>
-          <button class="formulario__boton" type="submit">Ingresar</button>
+          <button class="formulario__boton" type="submit" id="botonComprobar">
+            Ingresar
+          </button>
         </form>
       </article>
     </main>
-    <footer><a href="./public/chat/chat.html">Github</a></footer>
+    <footer><a href="../chat/chat.html">Github</a></footer>
   </body>
 </html>
