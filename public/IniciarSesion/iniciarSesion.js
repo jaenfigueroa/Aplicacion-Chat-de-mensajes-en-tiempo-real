@@ -60,7 +60,7 @@ function comprobarCredenciales(valor1, valor2, id, nombre, password) {
     localStorage.setItem('userName', nombre)
     localStorage.setItem('userId', id)
     localStorage.setItem('userPassword', password)
-    localStorage.setItem('userColor', "#0000ff")
+    localStorage.setItem('userColor', "#ff0000")
 
     // console.log(localStorage);
 

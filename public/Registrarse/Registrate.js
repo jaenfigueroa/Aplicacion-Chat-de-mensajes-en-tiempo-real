@@ -58,5 +58,8 @@ formulario.addEventListener('submit', (evento) => {
 
 ////////////////////////////
 function abrirChat() {
+
+  localStorage.setItem('userColor', "#ff0000")
+
   window.location.assign("../chat/chat.html")
 }
