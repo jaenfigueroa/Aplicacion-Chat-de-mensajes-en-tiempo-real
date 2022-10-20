@@ -1,11 +1,12 @@
 let baseDatosIndividual = []
 // const DOMINIO = 'https://primera-version.herokuapp.com'
-const DOMINIO = 'https://aplicacion-de-mensajes-production.up.railway.app'
-// const DOMINIO = 'http://localhost:3000'
+// const DOMINIO = 'https://aplicacion-de-mensajes-production.up.railway.app'
+const DOMINIO = 'http://localhost:3000'
 ///////////////////////////////////////////////////////////////
 const contenedorMensajes = document.querySelector('#contenedorMensajes')
 
-///OBTENER EL ARRAY DE LA BASE DE DATOS////////////////////////
+///////////////////////////////////////////////////////////////////
+///OBTENER LA BASE DE DATOS DEL BACKEND////////////////////////////
 function ObtenerArrayBD() {
   var url = `${DOMINIO}/obtenerArray`;
   //////////////////
@@ -21,7 +22,8 @@ function ObtenerArrayBD() {
     })
 }
 
-//MOSTRAR MENSAJES//////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+//MOSTRAR MENSAJES////////////////////////////////////////////////
 function mostrarMensajes() {
   let contenido = ''
 
@@ -39,7 +41,9 @@ function mostrarMensajes() {
 
   // document.scrollTop = document.scrollHeight;
 }
-//CREAR UN ELEMENTO INDIVIDUAL/////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////
+//CREAR UN ELEMENTO HTML INDIVIDUAL DE UN MENSAJE//////////////////
 function crearElemento(id, nombre, mensaje, fecha, color) {
 
   return `<div class="main__mensaje" id='mensaje${id}'>
@@ -57,7 +61,7 @@ window.addEventListener('load', () => {
 })
 
 //////////////////////////////////////////////////////////
-///CREAR NUEVOS MENSAJES /////////////////////////////////
+///CREAR NUEVO MENSAJE ///////////////////////////////////
 const formulario = document.querySelector('#formulario')
 const nombre = document.querySelector('#inputNombre')
 const inputMensaje = document.querySelector('#inputMensaje')
@@ -77,7 +81,7 @@ formulario.addEventListener('submit', (evento) => {
 })
 
 ///////////////////////////////////////////////////////////////
-//ENVIAR MENSAJE NUEVO/////////////////////////////////////////
+//ENVIAR MENSAJE NUEVO AL BACKEND//////////////////////////////
 function enviarMensajeNuevo(nombreUser, mensajeUser, colorUsuario) {
   var url = `${DOMINIO}/enviarMensaje`;
 

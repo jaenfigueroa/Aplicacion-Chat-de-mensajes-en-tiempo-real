@@ -25,39 +25,48 @@ header {
 
 /*/ ////////////////////////*/
 html {
-  background-color: aquamarine;
+  background-color: rgb(138, 118, 170);
 }
 body {
+  background-color: darkmagenta;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
+  min-height: 100vh;
+  justify-content: space-between;
 }
 main {
-  /* background-color: rgb(255, 255, 189); */
+  background-color: aqua;
   font-size: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  /* padding: 30px 0 0 0; */
 }
+
+/* ////////////////////////////////////////////////////////////////// */
+
 .main__contenedor-total {
-  background-color: aquamarine;
-  /* min-width: 320px; */
+  background-color: rgb(0, 255, 68);
   max-width: 800px;
   width: 100%;
-  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
+  max-height: calc(100vh -2rem);
 }
 /* ///////////////////////////////// */
 .main__seccion-mensajes {
-  background-color: darkmagenta;
+  background-color: rgb(255, 9, 9);
   width: 100%;
-  height: max-content;
+  height: 70%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-end;
+  overflow: hidden;
 }
 .main__contenedor-mensajes {
   /* background-color: rgb(214, 221, 255); */
@@ -97,9 +106,9 @@ main {
 
 /* ///////////////////////////////// */
 .main__seccion-editor {
-  background-color: rgb(171, 160, 255);
+  background-color: rgb(32, 3, 255);
   padding: 10px;
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
   height: 160px;
@@ -140,7 +149,3 @@ main {
   background-color: rgba(0, 0, 0, 0);
 }
 /*/////////////////////////*/
-footer {
-  height: 160px;
-  background-color: rgb(255, 255, 189);
-}

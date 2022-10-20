@@ -22,7 +22,7 @@ const baseDatos = require('../baseDatos/baseDatos.json')
 //GUARDAR MENSAJES NUEVOS///////////////////////////////////////////
 server.post('/enviarMensaje', (req, res) => {
 
-  const id = Math.floor(Math.random() * 10000)
+  const id = Math.floor(Math.random() * 1000000)
   const nombre = req.body.nombre
   const mensaje = req.body.mensaje
   const color = req.body.color
