@@ -72,7 +72,7 @@ window.addEventListener('load', () => {
   setInterval(() => {
 
     ObtenerArrayBD()
-  }, 500);
+  }, 1000);
 })
 
 //////////////////////////////////////////////////////////
