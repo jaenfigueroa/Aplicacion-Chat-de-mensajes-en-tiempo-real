@@ -144,22 +144,23 @@ server.post('/iniciarSesion', (req, res) => {
 ///COMPROBAR CREDENCIALES//////////////////////////////////////////////////
 server.post('/comprobarCredenciales', (req, res) => {
 
-  let userId = req.body.id || 'nohay'
-  let userPassword = req.body.password || 'nohay'
+  let userId = req.body.id
+  let userPassword = req.body.password
 
   // console.log(userId);
   // console.log(userPassword);
 
-  if (userId && userPassword === 'nohay') {
+  let usuarioFiltrado = usuarios.lista.filter(x => x.id == userId)
+
+  // console.log(usuarioFiltrado);
+
+  if (usuarioFiltrado.length === 0) {
+    // console.log('vacio');
+
     res.json({
       candado: false
     })
-
   } else {
-
-    let usuarioFiltrado = usuarios.lista.filter(x => x.id == userId)
-
-    // console.log(usuarioFiltrado);
 
     let idBD = usuarioFiltrado[0].id
     let passwordBD = usuarioFiltrado[0].password

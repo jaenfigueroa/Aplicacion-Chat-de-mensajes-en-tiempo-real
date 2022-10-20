@@ -67,7 +67,7 @@ window.addEventListener('load', () => {
   nombre.textContent = userName
 
   let userColor = localStorage.getItem('userColor')
-  inputColor.value = userColor
+  inputColor.value = userColor || '#ff0000'
 
   setInterval(() => {
 
@@ -93,7 +93,10 @@ botonEnviar.addEventListener('click', (evento) => {
   //////////////////
   inputMensaje.value = ''
 
-  enviarMensajeNuevo(nombreUsuario, mensajeUsuario, colorUsuario)
+  if (mensajeUsuario) {
+    enviarMensajeNuevo(nombreUsuario, mensajeUsuario, colorUsuario)
+  }
+
 })
 
 ///////////////////////////////////////////////////////////////

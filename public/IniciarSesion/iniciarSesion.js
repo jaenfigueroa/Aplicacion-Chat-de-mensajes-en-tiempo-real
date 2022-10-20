@@ -46,11 +46,6 @@ function comprobarCredenciales(valor1, valor2, id, nombre, password) {
 
   if (valor1 && valor2 === true) {
 
-    // console.log('primera');
-    // localStorage.setItem('nombreUser', nombre)
-    // localStorage.setItem('colorUser', color)
-    // localStorage.setItem('idUser', id)
-
     aviso1.classList.add('bloque__aviso--verde')
     aviso2.classList.add('bloque__aviso--verde')
 
@@ -60,8 +55,6 @@ function comprobarCredenciales(valor1, valor2, id, nombre, password) {
     localStorage.setItem('userName', nombre)
     localStorage.setItem('userId', id)
     localStorage.setItem('userPassword', password)
-    localStorage.setItem('userColor', "#ff0000")
-
     // console.log(localStorage);
 
     botonComprobar.textContent = 'Continuar'
