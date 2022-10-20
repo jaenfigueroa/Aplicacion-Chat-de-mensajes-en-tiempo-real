@@ -69,7 +69,7 @@ server.post('/registrate', (req, res) => {
   let passwordUsuario = req.body.password || 'noname'
   let idUsuario = Math.floor(Math.random() * 10000000000)
 
-  let numeroUsuario = {
+  let nuevoUsuario = {
     id: idUsuario,
     nombre: nombreUsuario,
     password: passwordUsuario,
@@ -85,7 +85,7 @@ server.post('/registrate', (req, res) => {
       candado: false
     })
   } else {
-    usuarios.lista.push(numeroUsuario)
+    usuarios.lista.push(nuevoUsuario)
     fs.writeFileSync('./baseDatos/usuarios.json', JSON.stringify(usuarios))
 
     res.send({

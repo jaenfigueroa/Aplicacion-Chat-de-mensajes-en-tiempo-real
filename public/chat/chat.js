@@ -66,12 +66,11 @@ window.addEventListener('load', () => {
   comprobarCredenciales()
 
   let userName = localStorage.getItem('userName')
-  let userColor = localStorage.getItem('userColor')
-
-  inputColor.value = userColor
   nombre.textContent = userName
 
   setInterval(() => {
+    let userColor = localStorage.getItem('userColor')
+    inputColor.value = userColor
 
     ObtenerArrayBD()
   }, 500);
