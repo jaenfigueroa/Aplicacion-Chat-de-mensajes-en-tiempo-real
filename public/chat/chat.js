@@ -137,8 +137,9 @@ function comprobarCredenciales() {
   let id = localStorage.getItem('userId')
   let password = localStorage.getItem('userPassword')
 
-  if (id && password === null) {
+  if (id === null || password === null) {
     window.location.assign("../IniciarSesion/IniciarSesion.html")
+
   } else {
 
     let url = `${DOMINIO}/comprobarCredenciales`
