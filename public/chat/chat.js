@@ -165,7 +165,7 @@ function comprobarCredenciales() {
             localStorage.setItem('userName', nombre)
             localStorage.setItem('userColor', color)
 
-            inputColor.value = color
+            inputColor.value = color || "#ff0078"
           } else {
             window.location.assign("../IniciarSesion/IniciarSesion.html")
           }
