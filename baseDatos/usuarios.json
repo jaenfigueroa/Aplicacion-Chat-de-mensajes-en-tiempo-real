@@ -1,0 +1,22 @@
+{
+  "lista": [
+    {
+      "id": 8784885748,
+      "nombre": "Ahini",
+      "password": "ahinixx",
+      "color": "#00ff00"
+    },
+    {
+      "id": 8784848445,
+      "nombre": "Sofia",
+      "password": "sofiaxx",
+      "color": "#ff0000"
+    },
+    {
+      "id": 5087306945,
+      "nombre": "Jaen",
+      "password": "noname",
+      "color": "#ff7f9f"
+    }
+  ]
+}
