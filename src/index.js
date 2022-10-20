@@ -112,7 +112,6 @@ server.post('/iniciarSesion', (req, res) => {
     let contrasena = resultado[0].password
 
     if (contrasena === passwordUsuario) {
-      let color = resultado[0].color
       let nombre = resultado[0].nombre
       let id = resultado[0].id
       let password = resultado[0].password
@@ -141,25 +140,6 @@ server.post('/iniciarSesion', (req, res) => {
   }
 
 })
-
-//CAMBIAR COLOR DE USUARIO//////////////////////////////////////////////////
-// server.post('/guardarColor', (req, res) => {
-//   let idUser = req.body.id
-//   let colorUser = req.body.color
-
-//   existencia = usuarios.lista.some(x => x.id === idUser)
-
-//   if (existencia) {
-//     let indice = usuarios.lista.findIndex(x => x.id === idUser)
-//     usuarios.lista[indice].color = colorUser
-
-//     fs.writeFileSync('./baseDatos/usuarios.json', JSON.stringify(usuarios))
-
-//     res.send('Color del usuario cambiado')
-//   } else {
-//     res.send('No existe el usuario')
-//   }
-// })
 
 ///COMPROBAR CREDENCIALES//////////////////////////////////////////////////
 server.post('/comprobarCredenciales', (req, res) => {
@@ -190,6 +170,7 @@ server.post('/comprobarCredenciales', (req, res) => {
         candado: true,
         nombre: nameBD,
       })
+
     } else {
       res.json({
         candado: false
