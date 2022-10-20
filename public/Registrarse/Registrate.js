@@ -1,4 +1,5 @@
-const DOMINIO = 'https://primera-version.herokuapp.com'
+// const DOMINIO = 'https://primera-version.herokuapp.com'
+const DOMINIO = 'https://chat-jaenfigueroa.herokuapp.com/'
 // const DOMINIO = 'https://aplicacion-de-mensajes-production.up.railway.app'
 // const DOMINIO = 'http://localhost:3000'
 ///////////////////////////////////////////////////////////////
