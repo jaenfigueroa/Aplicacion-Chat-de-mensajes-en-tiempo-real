@@ -1,9 +1,7 @@
 let baseDatosIndividual = []
 
-// const DOMINIO = 'https://primera-version.herokuapp.com'
-const DOMINIO = 'https://chat-jaenfigueroa.herokuapp.com'
-// const DOMINIO = 'https://aplicacion-de-mensajes-production.up.railway.app'
-// const DOMINIO = 'http://localhost:3000'
+// const DOMINIO = 'https://chat-jaenfigueroa.herokuapp.com'
+const DOMINIO = 'http://localhost:3000'
 ///////////////////////////////////////////////////////////////
 const contenedorMensajes = document.querySelector('#contenedorMensajes')
 
@@ -68,10 +66,10 @@ window.addEventListener('load', () => {
   let userName = localStorage.getItem('userName')
   nombre.textContent = userName
 
+  let userColor = localStorage.getItem('userColor')
+  inputColor.value = userColor
 
   setInterval(() => {
-    let userColor = localStorage.getItem('userColor')
-    inputColor.value = userColor || '#ff0000'
 
     ObtenerArrayBD()
   }, 500);
@@ -134,38 +132,43 @@ inputColor.addEventListener('input', (evento) => {
   localStorage.setItem('userColor', color)
 })
 
-///////////////////////////////////////////////////////////////
+//COMPROBAR CREDENCIALES///////////////////////////////////////////
 function comprobarCredenciales() {
   let id = localStorage.getItem('userId')
   let password = localStorage.getItem('userPassword')
 
-  let url = `${DOMINIO}/comprobarCredenciales`
+  if (id && password === null) {
+    window.location.assign("../IniciarSesion/IniciarSesion.html")
+  } else {
 
-  let contenido = {
-    id, password
-  }
+    let url = `${DOMINIO}/comprobarCredenciales`
 
-  // console.log(contenido);
-
-  fetch(url, {
-    method: 'POST', // or 'PUT'
-    body: JSON.stringify(contenido), // data can be `string` or {object}!
-    headers: {
-      'Content-Type': 'application/json'
+    let contenido = {
+      id, password
     }
-  })
-    .then((res) => {
-      if (res.ok) {
-        res.json().then(({ candado, nombre }) => {
 
-          if (candado) {
+    // console.log(contenido);
 
-            localStorage.setItem('userName', nombre)
-
-          } else {
-            window.location.assign("../IniciarSesion/IniciarSesion.html")
-          }
-        })
+    fetch(url, {
+      method: 'POST', // or 'PUT'
+      body: JSON.stringify(contenido), // data can be `string` or {object}!
+      headers: {
+        'Content-Type': 'application/json'
       }
     })
+      .then((res) => {
+        if (res.ok) {
+          res.json().then(({ candado, nombre }) => {
+
+            if (candado) {
+
+              localStorage.setItem('userName', nombre)
+
+            } else {
+              window.location.assign("../IniciarSesion/IniciarSesion.html")
+            }
+          })
+        }
+      })
+  }
 }

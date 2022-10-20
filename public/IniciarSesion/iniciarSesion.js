@@ -1,6 +1,5 @@
-const DOMINIO = 'https://chat-jaenfigueroa.herokuapp.com'
-// const DOMINIO = 'https://aplicacion-de-mensajes-production.up.railway.app'
-// const DOMINIO = 'http://localhost:3000'
+// const DOMINIO = 'https://chat-jaenfigueroa.herokuapp.com'
+const DOMINIO = 'http://localhost:3000'
 ///////////////////////////////////////////////////////////////
 const formulario = document.querySelector('#formulario')
 const aviso1 = document.querySelector('#aviso1')
@@ -33,9 +32,9 @@ botonComprobar.addEventListener('click', (evento) => {
   })
     .then((res) => {
       if (res.ok) {
-        res.json().then(({ candado1, candado2, id, nombre, color, password }) => {
+        res.json().then(({ candado1, candado2, id, nombre, password }) => {
 
-          comprobarCredenciales(candado1, candado2, id, nombre, color, password)
+          comprobarCredenciales(candado1, candado2, id, nombre, password)
         })
       }
     })
@@ -43,7 +42,7 @@ botonComprobar.addEventListener('click', (evento) => {
 
 
 ///COMPROBAR CREDENCIALES/////////////////////////////////
-function comprobarCredenciales(valor1, valor2, id, nombre, color, password) {
+function comprobarCredenciales(valor1, valor2, id, nombre, password) {
 
   if (valor1 && valor2 === true) {
 
@@ -60,8 +59,8 @@ function comprobarCredenciales(valor1, valor2, id, nombre, color, password) {
 
     localStorage.setItem('userName', nombre)
     localStorage.setItem('userId', id)
-    localStorage.setItem('userColor', color)
     localStorage.setItem('userPassword', password)
+    localStorage.setItem('userColor', "#0000ff")
 
     // console.log(localStorage);
 
