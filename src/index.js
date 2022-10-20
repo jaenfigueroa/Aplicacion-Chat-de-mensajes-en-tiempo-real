@@ -80,7 +80,8 @@ server.post('/registrate', (req, res) => {
   if (resultado) {
     res.send({
       respuesta: 'No disponible',
-      candado: false
+      candado: false,
+      id, nombreUsuario
     })
   } else {
     usuarios.lista.push(numeroUsuario)

@@ -31,7 +31,7 @@ formulario.addEventListener('submit', (evento) => {
   })
     .then((res) => {
       if (res.ok) {
-        res.json().then(({ respuesta, candado }) => {
+        res.json().then(({ respuesta, candado, id, nombre }) => {
           // window.open('https://www.google.com', "nombre de la ventana", "width=300, height=200")
           if (candado) {
             aviso1.classList.add('bloque__aviso--verde')
@@ -39,6 +39,9 @@ formulario.addEventListener('submit', (evento) => {
 
             botonComprobar.textContent = 'Continuar'
             botonComprobar.addEventListener('click', abrirChat)
+
+            localStorage.setItem('idUsuario', id)
+            localStorage.setItem('nombreUsuario', nombre)
 
           } else {
             aviso1.classList.add('bloque__aviso--rosa')
@@ -52,5 +55,5 @@ formulario.addEventListener('submit', (evento) => {
 })
 
 function abrirChat() {
-  window.open("/public/chat/chat.html")
+  window.location.assign("/public/chat/chat.html")
 }
