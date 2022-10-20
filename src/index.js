@@ -65,15 +65,16 @@ function fechaActual() {
 
 //REGISTRAR NUEVO USUARIO/////////////////////////////////////////////
 server.post('/registrate', (req, res) => {
-  let nombreUsuario = req.body.nombre || 'Pepe'
-  let passwordUsuario = req.body.password || 'noname'
+  let nombreUsuario = req.body.nombre
+  let passwordUsuario = req.body.password
+  let colorUsuario = req.body.color
   let idUsuario = Math.floor(Math.random() * 10000000000)
 
   let nuevoUsuario = {
     id: idUsuario,
     nombre: nombreUsuario,
     password: passwordUsuario,
-    color: '#00ff00'
+    color: colorUsuario
   }
 
   let resultado = usuarios.lista.some(x => x.nombre == nombreUsuario)
@@ -101,8 +102,8 @@ server.post('/registrate', (req, res) => {
 
 //INICIAR SESION///////////////////////////////////////////////////////
 server.post('/iniciarSesion', (req, res) => {
-  let nombreUsuario = req.body.nombre || ''
-  let passwordUsuario = req.body.password || ''
+  let nombreUsuario = req.body.nombre
+  let passwordUsuario = req.body.password
 
   //comprobar si el usuario existe
   let existencia = usuarios.lista.some(x => x.nombre === nombreUsuario)

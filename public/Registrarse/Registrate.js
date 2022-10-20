@@ -20,7 +20,8 @@ formulario.addEventListener('submit', (evento) => {
 
   let informacion = {
     "nombre": user,
-    "password": password
+    "password": password,
+    "color": "#ff0000"
   }
 
   fetch(url, {
