@@ -158,7 +158,7 @@ function comprobarCredenciales() {
         res.json().then(({ candado, nombre, color }) => {
 
           if (candado) {
-            console.log('datos correctos');
+            // console.log('datos correctos');
 
             localStorage.setItem('userName', nombre)
             localStorage.setItem('userColor', color)

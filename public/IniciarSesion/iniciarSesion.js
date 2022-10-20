@@ -47,7 +47,7 @@ function comprobarCredenciales(valor1, valor2, id, nombre, color, password) {
 
   if (valor1 && valor2 === true) {
 
-    console.log('primera');
+    // console.log('primera');
     // localStorage.setItem('nombreUser', nombre)
     // localStorage.setItem('colorUser', color)
     // localStorage.setItem('idUser', id)
@@ -63,7 +63,7 @@ function comprobarCredenciales(valor1, valor2, id, nombre, color, password) {
     localStorage.setItem('userColor', color)
     localStorage.setItem('userPassword', password)
 
-    console.log(localStorage);
+    // console.log(localStorage);
 
     botonComprobar.textContent = 'Continuar'
 
@@ -72,14 +72,14 @@ function comprobarCredenciales(valor1, valor2, id, nombre, color, password) {
     })
 
   } else if (valor1 === true && valor2 === false) {
-    console.log('segunda');
+    // console.log('segunda');
     aviso1.classList.add('bloque__aviso--verde')
     aviso2.classList.add('bloque__aviso--rosa')
 
     aviso1.textContent = 'Correcto'
     aviso2.textContent = 'Incorrecto'
   } else {
-    console.log('tercera');
+    // console.log('tercera');
     aviso1.classList.add('bloque__aviso--rosa')
     aviso2.classList.add('bloque__aviso--rosa')
 
