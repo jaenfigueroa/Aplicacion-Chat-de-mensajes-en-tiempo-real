@@ -73,7 +73,7 @@ server.post('/registrate', (req, res) => {
     id: idUsuario,
     nombre: nombreUsuario,
     password: passwordUsuario,
-    color: '#ff0000'
+    color: '#00ff00'
   }
 
   let resultado = usuarios.lista.some(x => x.nombre == nombreUsuario)
