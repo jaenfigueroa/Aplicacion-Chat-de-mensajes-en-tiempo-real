@@ -7,7 +7,7 @@
 ## 🔗 Vista previa en Mobile
 
 ![App Screenshot](./assets/capturas-pantalla/captura1.png/)
-![App Screenshot](./assets/capturas-pantalla/captura2.png.png/)
+![App Screenshot](./assets/capturas-pantalla/captura2.png/)
 
 ## 🔗 Sitio web de la aplicacion
 
