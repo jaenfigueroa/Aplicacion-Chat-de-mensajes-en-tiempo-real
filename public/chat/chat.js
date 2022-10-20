@@ -126,11 +126,35 @@ function enviarMensajeNuevo(nombreUser, mensajeUser, colorUsuario) {
       }
     })
 }
-///////////////////////////////////////////////////////////////
+
+///ENVIAR COLOR NUEVO////////////////////////////////////////////
 inputColor.addEventListener('input', (evento) => {
   const color = evento.target.value
 
   localStorage.setItem('userColor', color)
+
+  let url = `${DOMINIO}/guardarColor`
+
+  let contenido = {
+    id: localStorage.getItem('userId'),
+    color: color
+  }
+
+  fetch(url, {
+    method: 'POST', // or 'PUT'
+    body: JSON.stringify(contenido), // data can be `string` or {object}!
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then((res) => {
+      if (res.ok) {
+        res.json().then((respuesta) => {
+
+          // console.log("Respuesta del servidor:", Respuesta);
+        })
+      }
+    })
 })
 
 ///////////////////////////////////////////////////////////////
@@ -157,7 +181,7 @@ function comprobarCredenciales() {
       if (res.ok) {
         res.json().then(({ candado, nombre, color }) => {
 
-          // console.log(color);
+          console.log(color);
 
           if (candado) {
             // console.log('datos correctos');
@@ -165,8 +189,8 @@ function comprobarCredenciales() {
             localStorage.setItem('userName', nombre)
 
             console.log(color);
-            // localStorage.setItem('userColor', color)
-            // inputColor.value = color
+            localStorage.setItem('userColor', color)
+            inputColor.value = color
 
           } else {
             window.location.assign("../IniciarSesion/IniciarSesion.html")
