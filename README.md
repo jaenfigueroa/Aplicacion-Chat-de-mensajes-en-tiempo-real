@@ -1,12 +1,13 @@
 # <div align="center">Aplicacion-chat-de-mensajes 📩</div>
 
-## 🔗 Vista previa en Desktop
+<!-- ## 🔗 Vista previa en Desktop -->
 
-![App Screenshot](./assets/capturas/desktop.png)
+<!-- ![App Screenshot](./assets/capturas-pantalla/captura1.png/) -->
 
 ## 🔗 Vista previa en Mobile
 
-![App Screenshot](./assets/capturas/mobile.png)
+![App Screenshot](./assets/capturas-pantalla/captura1.png/)
+![App Screenshot](./assets/capturas-pantalla/captura2.png.png/)
 
 ## 🔗 Sitio web de la aplicacion
 
