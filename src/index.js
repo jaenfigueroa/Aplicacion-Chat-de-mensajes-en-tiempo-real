@@ -79,7 +79,7 @@ server.post('/registrate', (req, res) => {
 
   if (resultado) {
     res.send({
-      respuesta: 'El usuario ya existe',
+      respuesta: 'No disponible',
       candado: false
     })
   } else {
@@ -87,7 +87,7 @@ server.post('/registrate', (req, res) => {
     fs.writeFileSync('./baseDatos/usuarios.json', JSON.stringify(usuarios))
 
     res.send({
-      respuesta: 'Usuario creado con exito',
+      respuesta: 'Disponible',
       candado: true
     })
   }

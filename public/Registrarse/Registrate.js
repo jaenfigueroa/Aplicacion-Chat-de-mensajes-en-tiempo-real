@@ -6,12 +6,12 @@ const formulario = document.querySelector('#formulario')
 const usuario = document.querySelector('#userName')
 const contrasena = document.querySelector('#password')
 const botonComprobar = document.querySelector('#botonComprobar')
+const aviso1 = document.querySelector('#aviso1')
+const aviso2 = document.querySelector('#aviso2')
 
 formulario.addEventListener('submit', (evento) => {
   evento.preventDefault()
 
-
-  console.log('vava');
   let user = usuario.value
   let password = contrasena.value
 
@@ -32,15 +32,18 @@ formulario.addEventListener('submit', (evento) => {
     .then((res) => {
       if (res.ok) {
         res.json().then(({ respuesta, candado }) => {
-          console.log(respuesta);
-          console.log(candado);
-          // window.open("/public/chat/chat.html")
-          // console.log("Respuesta del servidor:", Respuesta);
-
+          // console.log(respuesta);
+          // console.log(candado);
           // window.open('https://www.google.com', "nombre de la ventana", "width=300, height=200")
           if (!candado) {
+            aviso1.classList.add('.bloque__aviso--verde')
+            aviso1.textContent = respuesta
+
             botonComprobar.textContent = 'Continuar'
             botonComprobar.addEventListener('click', abrirChat)
+          } else {
+            aviso1.classList.add('.bloque__aviso--rosa')
+            aviso1.textContent = respuesta
           }
 
         })

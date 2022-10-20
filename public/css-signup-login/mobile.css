@@ -88,11 +88,26 @@ main {
   flex-direction: column;
   /* background-color: blue; */
 }
-.bloque__titulo {
+.bloque__contenedor-titulo {
   margin-bottom: 0.2rem;
   color: rgb(184, 184, 184);
   margin-bottom: 0.5rem;
   color: #11092b;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.bloque__aviso {
+  font-size: 1.4rem;
+  color: black;
+  border-radius: 2px;
+  padding: 0px 4px;
+}
+.bloque__aviso--rosa {
+  background-color: rgb(255, 170, 242);
+}
+.bloque__aviso--verde {
+  background-color: rgb(170, 255, 228);
 }
 .bloque__input {
   /* background-color: rgb(0, 255, 51); */
