@@ -64,13 +64,13 @@ window.addEventListener('load', () => {
 
   comprobarCredenciales()
 
+  let nombreUsuario = localStorage.getItem('userName') || 'fulano'
   let colorNombre = localStorage.getItem('userColor') || '#ff0000'
-  inputColor.value = colorNombre
 
+  inputColor.value = colorNombre
+  nombre.textContent = nombreUsuario
 
   setInterval(() => {
-    let nombreUsuario = localStorage.getItem('userName')
-    nombre.textContent = nombreUsuario || 'Anonimo'
 
     ObtenerArrayBD()
   }, 1000);
@@ -142,6 +142,9 @@ function comprobarCredenciales() {
   let contenido = {
     id, password
   }
+
+  console.log(contenido);
+
 
   fetch(url, {
     method: 'POST', // or 'PUT'

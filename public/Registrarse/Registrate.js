@@ -31,7 +31,7 @@ formulario.addEventListener('submit', (evento) => {
   })
     .then((res) => {
       if (res.ok) {
-        res.json().then(({ respuesta, candado, id, nombre }) => {
+        res.json().then(({ respuesta, candado, id, nombre, password }) => {
           // window.open('https://www.google.com', "nombre de la ventana", "width=300, height=200")
           console.log(id);
           console.log(nombre);
@@ -44,6 +44,7 @@ formulario.addEventListener('submit', (evento) => {
 
             localStorage.setItem('userName', id)
             localStorage.setItem('userId', nombre)
+            localStorage.setItem('userPassword', password)
 
           } else {
             aviso1.classList.add('bloque__aviso--rosa')

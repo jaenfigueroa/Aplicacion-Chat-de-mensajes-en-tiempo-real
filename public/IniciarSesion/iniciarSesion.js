@@ -33,9 +33,9 @@ botonComprobar.addEventListener('click', (evento) => {
   })
     .then((res) => {
       if (res.ok) {
-        res.json().then(({ candado1, candado2, id, nombre, color }) => {
+        res.json().then(({ candado1, candado2, id, nombre, color, password }) => {
 
-          comprobarCredenciales(candado1, candado2, id, nombre, color)
+          comprobarCredenciales(candado1, candado2, id, nombre, color, password)
         })
       }
     })
@@ -43,14 +43,14 @@ botonComprobar.addEventListener('click', (evento) => {
 
 
 ///COMPROBAR CREDENCIALES/////////////////////////////////
-function comprobarCredenciales(valor1, valor2, id, nombre, color) {
+function comprobarCredenciales(valor1, valor2, id, nombre, color, password) {
 
   if (valor1 && valor2 === true) {
 
     console.log('primera');
-    localStorage.setItem('nombreUser', nombre)
-    localStorage.setItem('colorUser', color)
-    localStorage.setItem('idUser', id)
+    // localStorage.setItem('nombreUser', nombre)
+    // localStorage.setItem('colorUser', color)
+    // localStorage.setItem('idUser', id)
 
     aviso1.classList.add('bloque__aviso--verde')
     aviso2.classList.add('bloque__aviso--verde')
@@ -61,6 +61,7 @@ function comprobarCredenciales(valor1, valor2, id, nombre, color) {
     localStorage.setItem('userName', nombre)
     localStorage.setItem('userId', id)
     localStorage.setItem('userColor', color)
+    localStorage.setItem('userPassword', password)
 
     console.log(localStorage);
 

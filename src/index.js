@@ -91,7 +91,8 @@ server.post('/registrate', (req, res) => {
       respuesta: 'Disponible',
       candado: true,
       id: idUsuario,
-      nombre: nombreUsuario
+      nombre: nombreUsuario,
+      password: passwordUsuario
     })
   }
 
@@ -114,12 +115,13 @@ server.post('/iniciarSesion', (req, res) => {
       let color = resultado[0].color || '#ff0000'
       let nombre = resultado[0].nombre
       let id = resultado[0].id
+      let password = resultado[0].password
 
       res.json({
         resultado: 'contraseña correcta',
         candado1: true,
         candado2: true,
-        id, nombre, color
+        id, nombre, color, password
       })
 
     } else {
@@ -164,22 +166,33 @@ server.post('/comprobarCredenciales', (req, res) => {
   let userId = req.body.id
   let userPassword = req.body.password
 
-  let usuarioFiltrado = usuarios.lista.filter(x => x.id === userId)
-
-  let idBD = usuarioFiltrado[0].id
-  let passwordBD = usuarioFiltrado[0].password
-  let nameBD = usuarioFiltrado[0].nombre
-  let colorBD = usuarioFiltrado[0].color
-
-  if (userId === idBD && userPassword === passwordBD) {
+  if (userId || userPassword === null) {
     res.json({
-      candado: true,
-      nombre: nameBD,
-      color: colorBD
+      candado: false
     })
-  } res.json({
-    candado: false
-  })
+
+  } else {
+
+    let usuarioFiltrado = usuarios.lista.filter(x => x.id === userId)
+
+    let idBD = usuarioFiltrado[0].id
+    let passwordBD = usuarioFiltrado[0].password
+    let nameBD = usuarioFiltrado[0].nombre
+    let colorBD = usuarioFiltrado[0].color
+
+    if (userId === idBD && userPassword === passwordBD) {
+      res.json({
+        candado: true,
+        nombre: nameBD,
+        color: colorBD
+      })
+    } else {
+      res.json({
+        candado: false
+      })
+    }
+
+  }
 
 })
 
