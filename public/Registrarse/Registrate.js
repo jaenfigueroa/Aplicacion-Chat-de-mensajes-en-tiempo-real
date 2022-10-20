@@ -42,8 +42,8 @@ formulario.addEventListener('submit', (evento) => {
             botonComprobar.textContent = 'Continuar'
             botonComprobar.addEventListener('click', abrirChat)
 
-            localStorage.setItem('idUsuario', id)
-            localStorage.setItem('nombreUsuario', nombre)
+            localStorage.setItem('userName', id)
+            localStorage.setItem('userId', nombre)
 
           } else {
             aviso1.classList.add('bloque__aviso--rosa')
@@ -56,6 +56,7 @@ formulario.addEventListener('submit', (evento) => {
 
 })
 
+////////////////////////////
 function abrirChat() {
   window.location.assign("/public/chat/chat.html")
 }

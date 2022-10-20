@@ -23,7 +23,6 @@ botonComprobar.addEventListener('click', (evento) => {
   }
 
   let url = `${DOMINIO}/iniciarSesion`
-  console.log(contenido);
 
   fetch(url, {
     method: 'POST', // or 'PUT'
@@ -36,34 +35,56 @@ botonComprobar.addEventListener('click', (evento) => {
       if (res.ok) {
         res.json().then(({ candado1, candado2, id, nombre, color }) => {
 
-          // console.log("Respuesta del servidor:", Respuesta);
-          // console.log(respuesta);
-          if (candado1 && candado2 === true) {
-            localStorage.setItem('nombreUser', nombre)
-            localStorage.setItem('colorUser', color)
-            localStorage.setItem('idUser', id)
-
-            aviso1.textContent = 'Correcto'
-            aviso2.textContent = 'Correcto'
-
-            aviso1.classList.add('bloque__aviso--verde')
-            aviso2.classList.add('bloque__aviso--verde')
-          } else if (candado1 === true && candado2 === false) {
-
-            aviso1.textContent = 'Correcto'
-            aviso2.textContent = 'Incorrecto'
-
-            aviso1.classList.add('bloque__aviso--verde')
-            aviso2.classList.add('bloque__aviso--rosa')
-          } {
-            aviso1.textContent = 'Incorrecto'
-            aviso2.textContent = 'Incorrecto'
-
-            aviso1.classList.add('bloque__aviso--rosa')
-            aviso2.classList.add('bloque__aviso--rosa')
-          }
-
+          comprobarCredenciales(candado1, candado2, id, nombre, color)
         })
       }
     })
 })
+
+
+///COMPROBAR CREDENCIALES/////////////////////////////////
+function comprobarCredenciales(valor1, valor2, id, nombre, color) {
+
+  if (valor1 && valor2 === true) {
+
+    console.log('primera');
+    localStorage.setItem('nombreUser', nombre)
+    localStorage.setItem('colorUser', color)
+    localStorage.setItem('idUser', id)
+
+    aviso1.classList.add('bloque__aviso--verde')
+    aviso2.classList.add('bloque__aviso--verde')
+
+    aviso1.textContent = 'Correcto'
+    aviso2.textContent = 'Correcto'
+
+    localStorage.setItem('userName', nombre)
+    localStorage.setItem('userId', id)
+    localStorage.setItem('userColor', color)
+
+    console.log(localStorage);
+
+    botonComprobar.textContent = 'Continuar'
+
+    botonComprobar.addEventListener('click', (evento) => {
+      window.location.assign("/public/chat/chat.html")
+    })
+
+  } else if (valor1 === true && valor2 === false) {
+    console.log('segunda');
+    aviso1.classList.add('bloque__aviso--verde')
+    aviso2.classList.add('bloque__aviso--rosa')
+
+    aviso1.textContent = 'Correcto'
+    aviso2.textContent = 'Incorrecto'
+  } else {
+    console.log('tercera');
+    aviso1.classList.add('bloque__aviso--rosa')
+    aviso2.classList.add('bloque__aviso--rosa')
+
+    aviso1.textContent = 'Incorrecto'
+    aviso2.textContent = 'Incorrecto'
+  }
+
+}
+///////////////////////////

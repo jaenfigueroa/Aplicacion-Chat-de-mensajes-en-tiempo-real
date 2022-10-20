@@ -61,12 +61,12 @@ function crearElemento(id, nombre, mensaje, fecha, color) {
 
 //////////////////////////////////////////////////////////////////
 window.addEventListener('load', () => {
-  let colorNombre = localStorage.getItem('colorNombre') || '#ff0000'
+  let colorNombre = localStorage.getItem('userColor') || '#ff0000'
   inputColor.value = colorNombre
 
 
   setInterval(() => {
-    let nombreUsuario = localStorage.getItem('nombreUsuario')
+    let nombreUsuario = localStorage.getItem('userName')
     nombre.textContent = nombreUsuario || 'Anonimo'
 
     ObtenerArrayBD()
@@ -126,5 +126,5 @@ function enviarMensajeNuevo(nombreUser, mensajeUser, colorUsuario) {
 inputColor.addEventListener('input', (evento) => {
   const color = evento.target.value
 
-  localStorage.setItem('colorNombre', color)
+  localStorage.setItem('userColor', color)
 })
