@@ -1,1 +1,25 @@
-{"mensajes":[{"id":8787483748,"nombre":"Jaen","mensaje":"hola amigos como estan","fecha":"19:05 - 2 de enero","color":"#f00"},{"id":8787483748,"nombre":"Maria","mensaje":"Yo estoy ene le centro de lima","fecha":"19:07 - 2 de enero","color":"#0f0"},{"id":8787483748,"nombre":"Pablo","mensaje":"amigos me voy a cenar","fecha":"20: 05 - 2 de enero","color":"#00f"},{"id":385438,"nombre":"xsxs","mensaje":"xsxsxs","fecha":"19:20 - Jueves, 19 de Octubre","color":"#000000"},{"id":963110,"nombre":"xsxs","mensaje":"xsxs","fecha":"19:20 - Jueves, 19 de Octubre","color":"#000000"},{"id":450215,"nombre":"xsxs","mensaje":"xsxsxs","fecha":"19:20 - Jueves, 19 de Octubre","color":"#000000"},{"id":464883,"nombre":"xsxs","mensaje":"xsxsxs","fecha":"19:20 - Jueves, 19 de Octubre","color":"#000000"},{"id":668574,"nombre":"xsxs","mensaje":"xsxsxs","fecha":"19:22 - Jueves, 19 de Octubre","color":"#000000"}]}
+{
+  "mensajes": [
+    {
+      "id": 8787483748,
+      "nombre": "Jaen",
+      "mensaje": "hola amigos como estan",
+      "fecha": "19:05 - 2 de enero",
+      "color": "#f00"
+    },
+    {
+      "id": 8787483748,
+      "nombre": "Maria",
+      "mensaje": "Yo estoy en el centro de lima",
+      "fecha": "19:07 - 2 de enero",
+      "color": "#0f0"
+    },
+    {
+      "id": 8787483748,
+      "nombre": "Pablo",
+      "mensaje": "amigos me voy a cenar",
+      "fecha": "20: 05 - 2 de enero",
+      "color": "#00f"
+    }
+  ]
+}
