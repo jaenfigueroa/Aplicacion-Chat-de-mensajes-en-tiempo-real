@@ -113,7 +113,7 @@ server.post('/iniciarSesion', (req, res) => {
     let contrasena = resultado[0].password
 
     if (contrasena === passwordUsuario) {
-      let color = resultado[0].color || '#ff0000'
+      let color = resultado[0].color
       let nombre = resultado[0].nombre
       let id = resultado[0].id
       let password = resultado[0].password

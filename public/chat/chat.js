@@ -65,11 +65,11 @@ window.addEventListener('load', () => {
 
   comprobarCredenciales()
 
-  let nombreUsuario = localStorage.getItem('userName')
-  let colorNombre = localStorage.getItem('userColor')
+  let userName = localStorage.getItem('userName')
+  let userColor = localStorage.getItem('userColor')
 
-  inputColor.value = colorNombre
-  nombre.textContent = nombreUsuario
+  inputColor.value = userColor
+  nombre.textContent = userName
 
   setInterval(() => {
 
