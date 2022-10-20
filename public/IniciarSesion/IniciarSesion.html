@@ -19,7 +19,7 @@
       href="../css-signup-login/desktop.css"
       media="screen and (min-width: 1024px)" />
     <!-- js -->
-    <script src="main.js" defer></script>
+    <script src="iniciarSesion.js" defer></script>
   </head>
 
   <body>
@@ -27,18 +27,18 @@
     <main>
       <article class="main__contenedor-formulario">
         <h2 class="formulario__titulo">Iniciar Sesion</h2>
-        <form class="formulario">
+        <form class="formulario" id="formulario">
           <section>
             <div class="formulario__bloque">
               <label for="userName">
                 <div class="bloque__contenedor-titulo">
                   <span class="bloque__titulo">Nombre</span>
-                  <span class="bloque__aviso">Incorrecta</span>
+                  <span class="bloque__aviso" id="aviso1"></span>
                 </div>
                 <input
                   class="bloque__input"
                   type="text"
-                  id="userName"
+                  id="inputNombre"
                   autocomplete="name"
                   required />
               </label>
@@ -47,12 +47,12 @@
               <label for="password">
                 <div class="bloque__contenedor-titulo">
                   <span class="bloque__titulo">Contraseña</span>
-                  <span class="bloque__aviso">Incorrecta</span>
+                  <span class="bloque__aviso" id="aviso2"></span>
                 </div>
                 <input
                   class="bloque__input"
                   type="password"
-                  id="password"
+                  id="inputPassword"
                   autocomplete="new-password"
                   required />
                 <p class="bloque__ayuda">
@@ -62,7 +62,9 @@
               </label>
             </div>
           </section>
-          <button class="formulario__boton" type="submit">Ingresar</button>
+          <button class="formulario__boton" type="submit" id="botonComprobar">
+            Ingresar
+          </button>
         </form>
       </article>
     </main>

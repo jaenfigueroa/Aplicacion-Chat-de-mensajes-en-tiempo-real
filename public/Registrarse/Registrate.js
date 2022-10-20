@@ -33,9 +33,11 @@ formulario.addEventListener('submit', (evento) => {
       if (res.ok) {
         res.json().then(({ respuesta, candado, id, nombre }) => {
           // window.open('https://www.google.com', "nombre de la ventana", "width=300, height=200")
+          console.log(id);
+          console.log(nombre);
           if (candado) {
-            aviso1.classList.add('bloque__aviso--verde')
             aviso1.textContent = respuesta
+            aviso1.classList.add('bloque__aviso--verde')
 
             botonComprobar.textContent = 'Continuar'
             botonComprobar.addEventListener('click', abrirChat)

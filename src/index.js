@@ -77,12 +77,11 @@ server.post('/registrate', (req, res) => {
 
   let resultado = usuarios.lista.some(x => x.nombre == nombreUsuario)
 
+  //si existe ese usuario
   if (resultado) {
     res.json({
       respuesta: 'No disponible',
-      candado: false,
-      id: idUsuario,
-      nombre: nombreUsuario
+      candado: false
     })
   } else {
     usuarios.lista.push(numeroUsuario)
@@ -90,7 +89,9 @@ server.post('/registrate', (req, res) => {
 
     res.send({
       respuesta: 'Disponible',
-      candado: true
+      candado: true,
+      id: idUsuario,
+      nombre: nombreUsuario
     })
   }
 
@@ -116,21 +117,24 @@ server.post('/iniciarSesion', (req, res) => {
 
       res.json({
         resultado: 'contraseña correcta',
-        candado: true,
+        candado1: true,
+        candado2: true,
         id, nombre, color
       })
 
     } else {
       res.json({
         resultado: 'contraseña incorrecta',
-        candado: false
+        candado1: true,
+        candado2: false
       })
     }
 
   } else {
     res.json({
       resultado: 'usuario no registrado',
-      candado: false
+      candado1: false,
+      candado2: false
     })
   }
 
