@@ -14,4 +14,6 @@
 
 ## 🔗 Sitio web de la aplicacion
 
-https://jaenfigueroa.github.io/Aplicacion-Chat-de-mensajes-frontend-Backend
+<!-- https://jaenfigueroa.github.io/Aplicacion-Chat-de-mensajes-frontend-Backend -->
+
+https://chat-jaenfigueroa.herokuapp.com/
