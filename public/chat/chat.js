@@ -1,8 +1,8 @@
 let baseDatosIndividual = []
 
-const DOMINIO = 'https://primera-version.herokuapp.com'
+// const DOMINIO = 'https://primera-version.herokuapp.com'
 // const DOMINIO = 'https://aplicacion-de-mensajes-production.up.railway.app'
-// const DOMINIO = 'http://localhost:3000'
+const DOMINIO = 'http://localhost:3000'
 ///////////////////////////////////////////////////////////////
 const contenedorMensajes = document.querySelector('#contenedorMensajes')
 
@@ -143,8 +143,7 @@ function comprobarCredenciales() {
     id, password
   }
 
-  console.log(contenido);
-
+  // console.log(contenido);
 
   fetch(url, {
     method: 'POST', // or 'PUT'
@@ -157,14 +156,13 @@ function comprobarCredenciales() {
       if (res.ok) {
         res.json().then(({ candado, nombre, color }) => {
 
-          // console.log("Respuesta del servidor:", Respuesta);
           if (candado) {
             console.log('datos correctos');
 
             localStorage.setItem('userName', nombre)
             localStorage.setItem('userColor', color)
           } else {
-            window.location.assign("../index.html")
+            window.location.assign("../IniciarSesion/IniciarSesion.html")
           }
         })
       }
