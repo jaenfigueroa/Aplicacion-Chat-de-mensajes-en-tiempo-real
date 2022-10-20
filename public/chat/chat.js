@@ -157,8 +157,7 @@ function comprobarCredenciales() {
       if (res.ok) {
         res.json().then(({ candado, nombre, color }) => {
 
-
-          console.log(color);
+          // console.log(color);
 
           if (candado) {
             // console.log('datos correctos');
