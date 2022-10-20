@@ -78,10 +78,11 @@ server.post('/registrate', (req, res) => {
   let resultado = usuarios.lista.some(x => x.nombre == nombreUsuario)
 
   if (resultado) {
-    res.send({
+    res.json({
       respuesta: 'No disponible',
       candado: false,
-      idUsuario, nombreUsuario
+      id: idUsuario,
+      nombre: nombreUsuario
     })
   } else {
     usuarios.lista.push(numeroUsuario)
