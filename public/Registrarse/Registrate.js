@@ -32,17 +32,16 @@ formulario.addEventListener('submit', (evento) => {
     .then((res) => {
       if (res.ok) {
         res.json().then(({ respuesta, candado }) => {
-          // console.log(respuesta);
-          // console.log(candado);
           // window.open('https://www.google.com', "nombre de la ventana", "width=300, height=200")
-          if (!candado) {
-            aviso1.classList.add('.bloque__aviso--verde')
+          if (candado) {
+            aviso1.classList.add('bloque__aviso--verde')
             aviso1.textContent = respuesta
 
             botonComprobar.textContent = 'Continuar'
             botonComprobar.addEventListener('click', abrirChat)
+
           } else {
-            aviso1.classList.add('.bloque__aviso--rosa')
+            aviso1.classList.add('bloque__aviso--rosa')
             aviso1.textContent = respuesta
           }
 
