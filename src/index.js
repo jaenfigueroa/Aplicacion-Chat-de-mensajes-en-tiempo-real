@@ -78,12 +78,18 @@ server.post('/registrate', (req, res) => {
   let resultado = usuarios.lista.some(x => x.nombre == nombreUsuario)
 
   if (resultado) {
-    res.send('El usuario ya existe')
+    res.send({
+      respuesta: 'El usuario ya existe',
+      candado: false
+    })
   } else {
     usuarios.lista.push(numeroUsuario)
     fs.writeFileSync('./baseDatos/usuarios.json', JSON.stringify(usuarios))
 
-    res.send('Usuario creado con exito')
+    res.send({
+      respuesta: 'Usuario creado con exito',
+      candado: true
+    })
   }
 
 })
