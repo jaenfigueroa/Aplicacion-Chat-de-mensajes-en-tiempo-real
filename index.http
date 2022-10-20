@@ -1,3 +1,27 @@
 GET http://localhost:3000/obtenerArray
 
 ###
+POST http://localhost:3000/registrate/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "nombre": "Ahini",
+  "password": "noname"
+}
+###
+POST http://localhost:3000/iniciarSesion HTTP/1.1
+Content-Type: application/json
+
+{
+  "nombre": "Ahini",
+  "password": "ahinixx"
+}
+
+###
+POST http://localhost:3000/guardarColor HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": 5087306945,
+  "color": "#ff7f9f"
+}
