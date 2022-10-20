@@ -162,9 +162,9 @@ function comprobarCredenciales() {
             // console.log('datos correctos');
 
             localStorage.setItem('userName', nombre)
-            localStorage.setItem('userColor', color)
+            // localStorage.setItem('userColor', color)
+            // inputColor.value = color
 
-            inputColor.value = color
           } else {
             window.location.assign("../IniciarSesion/IniciarSesion.html")
           }
