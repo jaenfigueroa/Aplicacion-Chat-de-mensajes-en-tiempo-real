@@ -76,8 +76,10 @@ server.post('/registrate', (req, res) => {
   }
 
   let resultado = usuarios.lista.some(x => x.nombre == nombreUsuario)
+  console.log(nombreUsuario);
 
   if (resultado) {
+    console.log(nombreUsuario);
     res.send({
       respuesta: 'No disponible',
       candado: false,
