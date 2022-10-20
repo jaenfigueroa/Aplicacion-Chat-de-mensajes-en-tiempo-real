@@ -74,7 +74,7 @@ window.addEventListener('load', () => {
   setInterval(() => {
 
     ObtenerArrayBD()
-  }, 500);
+  }, 1000);
 })
 
 //////////////////////////////////////////////////////////
@@ -181,14 +181,14 @@ function comprobarCredenciales() {
       if (res.ok) {
         res.json().then(({ candado, nombre, color }) => {
 
-          console.log(color);
+          // console.log(color);
 
           if (candado) {
             // console.log('datos correctos');
 
             localStorage.setItem('userName', nombre)
 
-            console.log(color);
+            // console.log(color);
             localStorage.setItem('userColor', color)
             inputColor.value = color
 
