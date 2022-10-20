@@ -61,6 +61,9 @@ function crearElemento(id, nombre, mensaje, fecha, color) {
 
 //////////////////////////////////////////////////////////////////
 window.addEventListener('load', () => {
+
+  // comprobarCredenciales()
+
   let colorNombre = localStorage.getItem('userColor') || '#ff0000'
   inputColor.value = colorNombre
 
@@ -128,3 +131,39 @@ inputColor.addEventListener('input', (evento) => {
 
   localStorage.setItem('userColor', color)
 })
+
+///////////////////////////////////////////////////////////////
+function comprobarCredenciales() {
+  let id = localStorage.getItem('userId')
+  let password = localStorage.getItem('userPassword')
+
+  let url = `${DOMINIO}/comprobarCredenciales`
+
+  let contenido = {
+    id, password
+  }
+
+  fetch(url, {
+    method: 'POST', // or 'PUT'
+    body: JSON.stringify(contenido), // data can be `string` or {object}!
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then((res) => {
+      if (res.ok) {
+        res.json().then(({ candado, nombre, color }) => {
+
+          // console.log("Respuesta del servidor:", Respuesta);
+          if (candado) {
+            console.log('datos correctos');
+
+            localStorage.setItem('userName', nombre)
+            localStorage.setItem('userColor', color)
+          } else {
+            window.location.assign("../index.html")
+          }
+        })
+      }
+    })
+}

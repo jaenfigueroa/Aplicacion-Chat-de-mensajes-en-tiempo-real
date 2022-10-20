@@ -159,6 +159,30 @@ server.post('/guardarColor', (req, res) => {
   }
 })
 
+///COMPROBAR CREDENCIALES//////////////////////////////////////////////////
+server.post('/comprobarCredenciales', (req, res) => {
+  let userId = req.body.id
+  let userPassword = req.body.password
+
+  let usuarioFiltrado = usuarios.lista.filter(x => x.id === userId)
+
+  let idBD = usuarioFiltrado[0].id
+  let passwordBD = usuarioFiltrado[0].password
+  let nameBD = usuarioFiltrado[0].nombre
+  let colorBD = usuarioFiltrado[0].color
+
+  if (userId === idBD && userPassword === passwordBD) {
+    res.json({
+      candado: true,
+      nombre: nameBD,
+      color: colorBD
+    })
+  } res.json({
+    candado: false
+  })
+
+})
+
 ////////////////////////////////////////////////////////////////////
 server.use(express.static('public'))
 
