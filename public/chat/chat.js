@@ -162,6 +162,8 @@ function comprobarCredenciales() {
             // console.log('datos correctos');
 
             localStorage.setItem('userName', nombre)
+
+            console.log(color);
             // localStorage.setItem('userColor', color)
             // inputColor.value = color
 
