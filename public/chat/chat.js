@@ -62,7 +62,7 @@ function crearElemento(id, nombre, mensaje, fecha, color) {
 //////////////////////////////////////////////////////////////////
 window.addEventListener('load', () => {
 
-  // comprobarCredenciales()
+  comprobarCredenciales()
 
   let colorNombre = localStorage.getItem('userColor') || '#ff0000'
   inputColor.value = colorNombre
