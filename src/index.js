@@ -54,11 +54,11 @@ server.get('/obtenerArray', (req, res) => {
 function fechaActual() {
   let x = new Date()
   //------------------------
-  let hora = `${x.getUTCHours()}`.padStart(2, 0)
-  let minutos = `${x.getUTCMinutes()}`.padStart(2, 0)
-  let fecha = `${x.getUTCDate()}`.padStart(2, 0)
-  let mes = meses[x.getUTCMonth()]
-  let dia = dias[x.getUTCDay()]
+  let hora = `${x.getHours()}`.padStart(2, 0)
+  let minutos = `${x.getMinutes()}`.padStart(2, 0)
+  let fecha = `${x.getDate()}`.padStart(2, 0)
+  let mes = meses[x.getMonth()]
+  let dia = dias[x.getDay()]
 
   return `${hora}:${minutos} - ${dia}, ${fecha} de ${mes}`
 }
