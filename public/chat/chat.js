@@ -64,7 +64,7 @@ window.addEventListener('load', () => {
   comprobarCredenciales()
 
   let userName = localStorage.getItem('userName')
-  nombre.textContent = userName
+  mostrarNombre.textContent = userName
 
   let userColor = localStorage.getItem('userColor')
   inputColor.value = userColor || '#ff0000'
@@ -78,7 +78,7 @@ window.addEventListener('load', () => {
 //////////////////////////////////////////////////////////
 ///CREAR NUEVO MENSAJE ///////////////////////////////////
 const botonEnviar = document.querySelector('#botonEnviar')
-const nombre = document.querySelector('#inputNombre')
+const mostrarNombre = document.querySelector('#mostrarNombre')
 const inputMensaje = document.querySelector('#inputMensaje')
 const inputColor = document.querySelector('#inputColor')
 
@@ -86,7 +86,7 @@ const inputColor = document.querySelector('#inputColor')
 botonEnviar.addEventListener('click', (evento) => {
   evento.preventDefault()
 
-  let nombreUsuario = nombre.textContent
+  let nombreUsuario = mostrarNombre.textContent
   let mensajeUsuario = inputMensaje.value
   let colorUsuario = inputColor.value
 
@@ -167,6 +167,7 @@ function comprobarCredenciales() {
             if (candado) {
 
               localStorage.setItem('userName', nombre)
+              mostrarNombre.textContent = nombre
 
             } else {
               window.location.assign("../IniciarSesion/IniciarSesion.html")
