@@ -2,22 +2,22 @@
   "mensajes": [
     {
       "id": 8787483748,
-      "nombre": "Jaen",
+      "nombre": "jaen",
       "mensaje": "hola amigos como estan? 😀",
       "fecha": "05:29 - Jueves, 20 de Octubre",
       "color": "#f00"
     },
     {
       "id": 8787483748,
-      "nombre": "Maria",
-      "mensaje": "Yo estoy en el centro de lima",
+      "nombre": "maria",
+      "mensaje": "dos pinguinos se balanceban sobre la tela de una araña",
       "fecha": "05:32 - Jueves, 20 de Octubre",
       "color": "#0f0"
     },
     {
       "id": 8787483748,
-      "nombre": "Pablo",
-      "mensaje": "amigos me voy a cenar",
+      "nombre": "pablo",
+      "mensaje": "pimpon es un muñeco muy guapo y de carton",
       "fecha": "05:38 - Jueves, 20 de Octubre",
       "color": "#00f"
     }
