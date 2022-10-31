@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="aplicacion de mensajeria" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio de Sesion</title>
+    <!-- mobile css -->
+    <link rel="stylesheet" href="./css-signup-login/mobile.css" />
+    <!-- tablet css -->
+    <link
+      rel="stylesheet"
+      href="./css-signup-login/tablet.css"
+      media="screen and (min-width: 768px)" />
+    <!-- desktop css -->
+    <link
+      rel="stylesheet"
+      href="./css-signup-login/desktop.css"
+      media="screen and (min-width: 1024px)" />
+    <!-- js -->
+    <script src="./Registrarse/Registrate.js" defer></script>
+  </head>
+
+  <body>
+    <header>Chat</header>
+    <main>
+      <article class="main__contenedor-formulario">
+        <h2 class="formulario__titulo">Registrate</h2>
+        <form class="formulario" id="formulario">
+          <section>
+            <div class="formulario__bloque">
+              <label for="userName">
+                <div class="bloque__contenedor-titulo">
+                  <span class="bloque__titulo">Nombre</span>
+                  <span class="bloque__aviso" id="aviso1"></span>
+                </div>
+                <input
+                  class="bloque__input"
+                  type="text"
+                  id="userName"
+                  autocomplete="name"
+                  required />
+              </label>
+            </div>
+            <div class="formulario__bloque">
+              <label for="password">
+                <div class="bloque__contenedor-titulo">
+                  <span class="bloque__titulo">Contraseña</span>
+                </div>
+                <input
+                  class="bloque__input"
+                  type="password"
+                  id="password"
+                  autocomplete="new-password"
+                  required />
+                <p class="bloque__ayuda">
+                  ¿Ya tienes una cuenta?
+                  <a href="./IniciarSesion/IniciarSesion.html">Inicia Sesion</a>
+                </p>
+              </label>
+            </div>
+          </section>
+          <button class="formulario__boton" type="submit" id="botonComprobar">
+            Comprobar
+          </button>
+        </form>
+      </article>
+    </main>
+    <footer><a href="./chat/chat.html">Github</a></footer>
+  </body>
+</html>
