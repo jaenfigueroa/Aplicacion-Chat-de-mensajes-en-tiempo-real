@@ -8,14 +8,6 @@ server.use(cors())
 
 const fs = require('fs')
 ////////////////////////////////////////////////////////////////////
-var meses = [
-  'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
-  'Julio', 'Agosto', 'Setiembre', 'Octubre', 'Nombiembre', 'Diciembre'
-]
-
-var dias = [
-  'lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'
-]
 
 ////////////////////////////////////////////////////////////////////
 const baseDatos = require('../baseDatos/baseDatos.json')
