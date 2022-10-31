@@ -45,15 +45,35 @@ function mostrarMensajes() {
 
 ///////////////////////////////////////////////////////////////////
 //CREAR UN ELEMENTO HTML INDIVIDUAL DE UN MENSAJE//////////////////
+var meses = [
+  'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+  'Julio', 'Agosto', 'Setiembre', 'Octubre', 'Nombiembre', 'Diciembre'
+]
+
+var dias = [
+  'lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'
+]
+
+
+
 function crearElemento(id, nombre, mensaje, fecha, color) {
 
-  let fechaPAIS = new Date(fecha).toLocaleString()
+  let fechaACT = new Date(fecha)
+
+  let dia = dias[fechaACT.getDay() - 1]
+  let numero = fechaACT.getDate()
+  let mes = meses[fechaACT.getMonth()]
+  let año = fechaACT.getFullYear()
+  let hora = fechaACT.getHours()
+  let minuto = fechaACT.getMinutes()
+
+  let fechaSTR = `${dia},${hora}:${minuto}, ${numero} ${mes} ${año}`
 
   return `
   <div class="chat__mensaje" id='mensaje${id}'>
   <div>
     <h3 class="mensaje__nombre" style="color:${color}">${nombre}</h3>
-    <p class="mensaje__fecha">${fechaPAIS}</p>
+    <p class="mensaje__fecha">${fechaSTR}</p>
   </div>
   <p class="mensaje__texto">${mensaje}</p>
   </div>
