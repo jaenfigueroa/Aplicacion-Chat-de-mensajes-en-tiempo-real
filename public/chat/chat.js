@@ -1,7 +1,7 @@
 let baseDatosIndividual = []
 
-const DOMINIO = 'https://chat-jaenfigueroa.herokuapp.com'
-// const DOMINIO = 'http://localhost:3000'
+// const DOMINIO = 'https://chat-jaenfigueroa.herokuapp.com'
+const DOMINIO = 'http://localhost:3000'
 ///////////////////////////////////////////////////////////////
 const contenedorMensajes = document.querySelector('#contenedorMensajes')
 
@@ -51,29 +51,33 @@ var meses = [
 ]
 
 var dias = [
-  'lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'
+  'Domingo', 'lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'
 ]
-
 
 
 function crearElemento(id, nombre, mensaje, fecha, color) {
 
-  let fechaACT = new Date(fecha)
+  let fechaUTC = new Date(fecha)
 
-  let dia = dias[fechaACT.getDay() - 1]
-  let numero = fechaACT.getDate()
-  let mes = meses[fechaACT.getMonth()]
-  let año = fechaACT.getFullYear()
-  let hora = fechaACT.getHours()
-  let minuto = fechaACT.getMinutes()
+  let dia = dias[fechaUTC.getDay()]
+  let hora = fechaUTC.getHours()
+  let minuto = fechaUTC.getMinutes().toString().padStart(2, 0)
+  let numero = fechaUTC.getDate()
+  let mes = meses[fechaUTC.getMonth()]
+  let año = fechaUTC.getFullYear()
 
-  let fechaSTR = `${dia},${hora}:${minuto}, ${numero} ${mes} ${año}`
+  let fechaZonaHoraria = `
+  ${dia},
+  ${hora > 12 ? (hora - 12) + ':' + minuto + ' p.m.' : hora + '' + minuto + 'AM'}
+  ${numero} 
+  ${mes} 
+  ${año}`
 
   return `
   <div class="chat__mensaje" id='mensaje${id}'>
   <div>
     <h3 class="mensaje__nombre" style="color:${color}">${nombre}</h3>
-    <p class="mensaje__fecha">${fechaSTR}</p>
+    <p class="mensaje__fecha">${fechaZonaHoraria}</p>
   </div>
   <p class="mensaje__texto">${mensaje}</p>
   </div>
